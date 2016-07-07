@@ -96,7 +96,7 @@ public class Intersection {
 	public static void main(String[] args) {
 		int[] a = {0,1,2,2,1,0,5};
 		int[] b = {2,2,0,5};
-		int[] result = intersection(a, b);
+		//int[] result = intersection(a, b);
 		int[] result2 = intersection2(a,b);
 		for(int i = 0; i < result2.length; i++){
 			System.out.print(result2[i]+" ");
