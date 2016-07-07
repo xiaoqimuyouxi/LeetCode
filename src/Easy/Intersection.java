@@ -18,6 +18,7 @@ public class Intersection {
 		Arrays.sort(nums2);	//	不加这句会出现匹配不到0的情况
 		for(int i = 0; i < nums1.length; i++){
 			//查找到的话返回数在nums2中的索引值，如果找不到返回负值
+			//必须对已排序的数组使用binarySearch,否则会产生不可预料的结果
 			flag = Arrays.binarySearch(nums2, nums1[i]);	
 			if(flag >= 0){
 				if(list.contains(nums1[i]))  //避免出现重复的数字
