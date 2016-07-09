@@ -2,6 +2,7 @@ package Easy;
 
 public class AddDigits {
 
+	//258Ìâ
 	public static int addDigits(int num){
 		int c = num;
 		int sum = 0;

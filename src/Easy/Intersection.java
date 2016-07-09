@@ -11,6 +11,7 @@ public class Intersection {
 
 	/*
 	 * 使用list运行时间是14ms
+	 * 349题
 	 */
 	public static int[] intersection(int[] nums1, int[] nums2){
 		int flag = 0;

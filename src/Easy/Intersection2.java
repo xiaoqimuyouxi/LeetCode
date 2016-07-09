@@ -8,6 +8,7 @@ public class Intersection2 {
 
 	/**
 	 * 6ms
+	 * 350Ìâ
 	 */
 	public static int[] intersection(int[] nums1, int[] nums2){
 		List<Integer> list = new ArrayList<Integer>();

@@ -9,6 +9,7 @@ import java.util.Set;
 public class MajorityElement {
 
 	//36ms
+	//169Ã‚
 	public static int majority(int[] nums){
 		int len = nums.length, halfN = 0;
 		

@@ -2,6 +2,7 @@ package Easy;
 //http://www.cnblogs.com/graphics/archive/2010/06/21/1752421.html算法
 public class NumberOf1Bits {
 
+	//191题
 	public static int hammingWeight(int n){
 		int c = 0;
 		while(n != 0){	//n可能是2147483647(100000000000000000000000000000000) 

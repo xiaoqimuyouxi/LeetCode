@@ -2,6 +2,7 @@ package Easy;
 
 public class HouseRobber {
 
+	//198Ìâ
 	public static int rob(int[] nums){
 		int a = 0;
 		int b = 0;

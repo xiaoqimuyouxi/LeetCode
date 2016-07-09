@@ -17,6 +17,7 @@ package Easy;
 
 public class SumOf2Integers {
 	
+	//371题
 	public static int getSum(int a, int b){
 		int nCarry = a&b;	//进位
 		int nSumnoCarry = a^b;	//非进位
