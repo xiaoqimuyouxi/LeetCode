@@ -2,7 +2,7 @@ package Easy;
 
 public class PowerOf4 {
 
-	//342Ã‚
+	//342Ã‚	2ms
 	public static boolean isPowerOf4(int num){
 		if(num <= 0)
 			return false;
