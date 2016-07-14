@@ -34,7 +34,17 @@ public class PowerOf2 {
 		return n > 0 && (n&(n-1))==0;
 	}
 	
+	/*
+	 * 用log时，唯独使用536870912的时候是false
+	 * 改为用log10就对了	2ms
+	 * Math.log()返回以自然对数e为底的数
+	 * Math.log10()返回以10为底的数
+	 */
+	public static boolean isPowerof3san(int n){
+		return Math.log10(n)/Math.log10(2) % 1 == 0;
+	}
+	
 	public static void main(String[] args) {
-		System.out.println(isPowerof2(536870912));
+		System.out.println(isPowerof3san(536870912));
 	}
 }
