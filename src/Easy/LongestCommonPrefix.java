@@ -59,5 +59,6 @@ public class LongestCommonPrefix {
 		String[] strs = {"fegregtgtfsr", "fegrehgtrrfe", "fegrthgf","fehtghngn"};
 		String[] str = {};
 		System.out.println(longestCommonPrefix3(strs));
+		System.out.println(longestCommonPrefix2(str));
 	}
 }
