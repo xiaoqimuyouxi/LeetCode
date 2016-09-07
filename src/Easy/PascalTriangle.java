@@ -47,11 +47,27 @@ public class PascalTriangle {
         	}
         	totalNum.add(tmpList);          //每次添加tmpList都会覆盖之前的值，加入到容器的是tmpList对象引用
         									//所以必须用两个不同的对象来存储
+        	//totalNum.add(new ArrayList<Integer>(tmpList));也是一种可行的解决方法
         }
         return totalNum;
     }
 	
+	//别人写的方法
+	public static List<List<Integer>> generate2(int numRows)
+	{
+		List<List<Integer>> allrows = new ArrayList<List<Integer>>();
+		ArrayList<Integer> row = new ArrayList<Integer>();
+		for(int i=0;i<numRows;i++)
+		{
+			row.add(0, 1);
+			for(int j=1;j<row.size()-1;j++)
+				row.set(j, row.get(j)+row.get(j+1));
+			allrows.add(new ArrayList<Integer>(row));	//每次new一个新的List引用，保证后面的值不会覆盖前面的
+		}
+		return allrows;
+	}
+	
 	public static void main(String[] args) {
-		System.out.println(generate(10));
+		System.out.println(generate2(10));
 	}
 }
