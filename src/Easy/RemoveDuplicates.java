@@ -2,6 +2,7 @@ package Easy;
 
 import java.util.Arrays;
 
+//26题  删除已排序的数组中重复的数字
 public class RemoveDuplicates {
 
 	//1ms
