@@ -20,14 +20,21 @@ public class LengthofLastWord {
 	//11ms
 	public static int lengthOfLastWord2(String s) {
 		String[] ss = s.split(" ");
-		if(ss.length == 0) {
+		if(ss.length == 0) {	//转换成字符串数组后再判断
 			return 0;
 		}
 		String word = ss[ss.length-1];
 		return word.length();
 	}
 	
+	//7ms
+	public static int lengthOfLastWord3(String s) {
+		s = s.trim();
+		int last = s.lastIndexOf(" ");
+		return s.length() - 1 - last;
+	}
+	
 	public static void main(String[] args) {
-		System.out.println(lengthOfLastWord2("        "));
+		System.out.println(lengthOfLastWord3("hello world   "));
 	}
 }
