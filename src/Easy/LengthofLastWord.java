@@ -17,7 +17,17 @@ public class LengthofLastWord {
 		}
     }
 	
+	//11ms
+	public static int lengthOfLastWord2(String s) {
+		String[] ss = s.split(" ");
+		if(ss.length == 0) {
+			return 0;
+		}
+		String word = ss[ss.length-1];
+		return word.length();
+	}
+	
 	public static void main(String[] args) {
-		System.out.println(lengthOfLastWord("        "));
+		System.out.println(lengthOfLastWord2("        "));
 	}
 }
