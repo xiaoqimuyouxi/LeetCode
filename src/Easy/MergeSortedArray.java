@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * 88题
  * @author ly
- *
+ *合并两个已排好序的数组
  */
 public class MergeSortedArray {
 
