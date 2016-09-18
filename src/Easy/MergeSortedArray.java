@@ -1,0 +1,42 @@
+package Easy;
+
+import java.util.Arrays;
+
+/**
+ * 88Ìâ
+ * @author ly
+ *
+ */
+public class MergeSortedArray {
+
+	//1ms
+	public void merge2(int[] nums1, int m, int[] nums2, int n) {
+		for(int i = m; i < nums1.length; i++) {
+			nums1[i] = nums2[i-m];
+		}
+		Arrays.sort(nums1);
+	}
+	
+	//0ms
+	/**
+	 * nums1[index--] = nums1[i] > nums2[j] ? nums1[i--] : nums2[j--]
+	 * @param nums1
+	 * @param m
+	 * @param nums2
+	 * @param n
+	 */
+	public void merge3(int[] nums1, int m, int[] nums2, int n) {
+		int i = m-1, j = n-1, index = m+n-1;
+		while(i >= 0 && j >= 0) {
+			if(nums1[i] > nums2[j]) {
+				nums1[index--] = nums1[i--];
+			}
+			else {
+				nums1[index--] = nums2[j--];
+			}
+		}
+		while(j >= 0) {
+			nums1[index--] = nums2[j--];
+		}
+	}
+}
