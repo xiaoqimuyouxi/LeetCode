@@ -3,7 +3,9 @@ package Easy;
 //206题
 public class ReverseLinkedList {
 
-	//1ms
+	//1ms	递归
+	//把一个直接调用自己，或通过一系列的调用语句简介地调用自己的函数，称为递归函数
+	//大量的递归调用会建立函数的副本，会耗费大量的时间和内存
 	public ListNode reverseList(ListNode head) {
        if(head == null || head.next == null) {
     	   return head;
@@ -17,7 +19,7 @@ public class ReverseLinkedList {
        
     }
 	
-	//没懂？？
+	//迭代
 	public ListNode reverseList2(ListNode head) {
         if(head == null || head.next == null)
           return head;
