@@ -24,7 +24,19 @@ public class FindDifference {
         return (char)(re2-re1);
     }
 	
+	//5ms	采用比特之间异或的方法
+	public static char findTheDifference2(String s, String t) {
+		char[] c1 = s.toCharArray();
+        char[] c2 = t.toCharArray();
+        char c = 0;
+        for(char b : c1) 
+        	c ^= b;
+        for(char a : c2)
+        	c ^= a;
+        return (char)c;
+	}
+	
 	public static void main(String[] args) {
-		System.out.println(findTheDifference("abcd", "decba"));
+		System.out.println(findTheDifference2("abcd", "decba"));
 	}
 }
