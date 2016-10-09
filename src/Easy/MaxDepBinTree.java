@@ -53,6 +53,8 @@ public class MaxDepBinTree {
 		System.out.println(list);
 		 */
 		
+		int i = 5, j = 10;
+		System.out.println(i + ~j);
 		
 		System.out.println(maxDepth(node1));
 	}
