@@ -13,6 +13,8 @@ public class RansomNote {
 	 * 17ms	空间换取时间
 	 * 空间复杂度为O(n)
 	 * 时间复杂度为O(n)
+	 * 255的空间改成26，a[ransomNote.charAt(i)]改成a[ransomNote.charAt(i) - 'a']，其余类似
+	 * 可以减小空间浪费，但是时间差不多
 	 * @param ransomNote
 	 * @param magazine
 	 * @return
@@ -60,7 +62,27 @@ public class RansomNote {
 		return true;
 	}
 	
+	/**
+	 * 别人改进	14ms
+	 * 如果觉得128的空间造成了过多的多余，可以用26替换
+	 * 相应的下面temp[c-'a']替换掉temp[c]
+	 * @param ransomNote
+	 * @param magazine
+	 * @return
+	 */
+	public static boolean canConstruct2(String ransomNote, String magazine) {
+		int[] temp = new int[128];	
+		for(char c : magazine.toCharArray())
+			temp[c]++;
+		
+		for(char c : ransomNote.toCharArray()) {
+			if(temp[c]-- <= 0) 
+				return false;
+		}
+		return true;
+	}
+	
 	public static void main(String[] args) {
-		System.out.println(canConstruct("ab", "aab"));
+		System.out.println(canConstruct2("ab", "aab"));
 	}
 }
