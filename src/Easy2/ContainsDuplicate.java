@@ -4,14 +4,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 /**
- * 217Ìâ
- * ÅĞ¶ÏÊı×éÖĞÊÇ·ñ°üº¬ÏàÍ¬µÄÊı×Ö
+ * 217é¢˜
+ * åˆ¤æ–­æ•°ç»„ä¸­æ˜¯å¦åŒ…å«ç›¸åŒçš„æ•°å­—
  * @author ly
  *
  */
 public class ContainsDuplicate {
 
-	//Ê±¼ä¸´ÔÓ¶ÈO(n)£¬¿Õ¼ä¸´ÔÓ¶ÈO(n),13ms
+	//æ—¶é—´å¤æ‚åº¦O(n)ï¼Œç©ºé—´å¤æ‚åº¦O(n),13ms
 	public static boolean containsDuplicate(int[] nums) {
         HashSet<Integer> set = new HashSet<Integer>();
         for(int i = 0; i < nums.length; i++) {
@@ -22,7 +22,7 @@ public class ContainsDuplicate {
         return false;
     }
 	
-	//³¬Ê±
+	//è¶…æ—¶
 	public static boolean containsDuplicate1(int[] nums) {
 		int first = 0;
 		int end = nums.length-1;
@@ -38,7 +38,7 @@ public class ContainsDuplicate {
 		return false;
 	}
 	
-	//Ê±¼ä¸´ÔÓ¶ÈO(n^2)£¬¿Õ¼ä¸´ÔÓ¶ÈO(1),µ«ÊÇºÍÉÏÃæÒ»Ñù³¬Ê±
+	//æ—¶é—´å¤æ‚åº¦O(n^2)ï¼Œç©ºé—´å¤æ‚åº¦O(1),ä½†æ˜¯å’Œä¸Šé¢ä¸€æ ·è¶…æ—¶
 	public static boolean containsDuplicate2(int[] nums) {
 		for(int i = 0; i < nums.length; i++) {
 			for(int j = i+1; j < nums.length; j++) {
@@ -49,7 +49,7 @@ public class ContainsDuplicate {
 		return false;
 	}
 	
-	//Ê±¼ä¸´ÔÓ¶ÈO(nlogn)£¬¿Õ¼ä¸´ÔÓ¶ÈO(1),µ«ÊÇºÍÉÏÃæÒ»Ñù³¬Ê±
+	//æ—¶é—´å¤æ‚åº¦O(nlogn)ï¼Œç©ºé—´å¤æ‚åº¦O(1),ä½†æ˜¯å’Œä¸Šé¢ä¸€æ ·è¶…æ—¶
 	public static boolean containsDuplicate3(int[] nums) {
 		Arrays.sort(nums);
 		for(int i = 1; i < nums.length; i++) {

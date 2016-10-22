@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 401Ìâ
- * ¶þ½øÖÆÊÖ±í
+ * 401é¢˜
+ * äºŒè¿›åˆ¶æ‰‹è¡¨
  * @author ly
  *
  */
@@ -15,13 +15,13 @@ public class BinaryWatch {
         List<String> list = new ArrayList<String>();
         for(int h = 0; h < 12; h++) {
         	for(int m = 0; m < 60; m++) {
-        		//Integer.bitCount(i);¼ÆËãiµÄ¶þ½øÖÆ±íÊ¾ÖÐ1µÄ¸öÊý
+        		//Integer.bitCount(i);è®¡ç®—içš„äºŒè¿›åˆ¶è¡¨ç¤ºä¸­1çš„ä¸ªæ•°
         		if(Integer.bitCount(h) + Integer.bitCount(m) == num) {
         			if(m >= 0 && m < 10)
         				list.add(""+h+":0"+m);
         			else
             			list.add(""+h+":" +m);
-        			//ÕâÀï¿ÉÓÃSystem.format("%d:%02d",h,m);±íÊ¾
+        			//è¿™é‡Œå¯ç”¨System.format("%d:%02d",h,m);è¡¨ç¤º
         		}
         	}
         }
