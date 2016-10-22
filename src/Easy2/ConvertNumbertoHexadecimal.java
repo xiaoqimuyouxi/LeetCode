@@ -55,9 +55,12 @@ public class ConvertNumbertoHexadecimal {
         return new String(ret, index + 1, 7 - index);
     }
 
+    //7ms
     public static String toHex3(int num) {
         char[] res = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
         StringBuilder r = new StringBuilder();
+        if(num == 0)
+            return "0";
         while(num != 0) {
             r.insert(0, res[num&0xf]);
             num >>>= 4;
