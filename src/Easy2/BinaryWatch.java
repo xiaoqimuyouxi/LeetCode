@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 401题
- * 二进制手表
+ * 401棰�
+ * 浜岃繘鍒舵墜琛�
  * @author ly
  *
  */
@@ -15,13 +15,13 @@ public class BinaryWatch {
         List<String> list = new ArrayList<String>();
         for(int h = 0; h < 12; h++) {
         	for(int m = 0; m < 60; m++) {
-        		//Integer.bitCount(i);计算i的二进制表示中1的个数
+        		//Integer.bitCount(i);璁＄畻i鐨勪簩杩涘埗琛ㄧず涓�1鐨勪釜鏁�
         		if(Integer.bitCount(h) + Integer.bitCount(m) == num) {
         			if(m >= 0 && m < 10)
         				list.add(""+h+":0"+m);
         			else
             			list.add(""+h+":" +m);
-        			//这里可用System.format("%d:%02d",h,m);表示
+        			//杩欓噷鍙敤System.format("%d:%02d",h,m);琛ㄧず
         		}
         	}
         }
@@ -29,6 +29,7 @@ public class BinaryWatch {
     }
 	
 	//4ms
+	//dddddddddddddddddddd
 	public static List<String> readBinaryWatch1(int num) {
 		String[][] h = {
 				{"0"},
