@@ -18,7 +18,23 @@ public class ClimbingStairs {
         return climbStairs(n-1) + climbStairs(n-2);
     }
 
+    /*
+    * 斐波那契数列：0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+    * 裴波那契数列的第n项的值是第n阶楼梯的爬法的种类数
+    * 0ms
+    * */
+    public static int climbStairs2(int n) {
+        int a = 0, b = 1;
+        int sum = 0;
+        for(int i = 1; i <= n; i++) {
+            sum = a+b;
+            a = b;
+            b = sum;
+        }
+        return sum;
+    }
+
     public static void main(String[] args) {
-        System.out.println(climbStairs(44));
+        System.out.println(climbStairs2(44));
     }
 }
