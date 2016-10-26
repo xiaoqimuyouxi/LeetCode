@@ -1,6 +1,8 @@
 package Easy2;
 
 /**
+ * 70题
+ * 爬楼梯
  * Created by ly on 2016/10/26.
  */
 public class ClimbingStairs {
