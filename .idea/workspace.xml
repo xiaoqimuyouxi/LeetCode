@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c856757b-f7c9-4130-8594-9920f40d000e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Easy2/PathSumIII.java" afterPath="$PROJECT_DIR$/src/Easy2/PathSumIII.java" />
     </list>
     <ignored path="LeetCode.iws" />
@@ -37,45 +36,11 @@
       <file leaf-file-name="PathSumIII.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Easy2/PathSumIII.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-125">
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Demo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Demo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+            <state relative-caret-position="-390">
+              <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4029#4030#0" expanded="true" />
-                <element signature="e#4067#4068#0" expanded="true" />
-                <element signature="e#4716#4726#0" expanded="true" />
-                <element signature="e#5968#5978#0" expanded="true" />
-                <element signature="e#7392#7402#0" expanded="true" />
-                <element signature="e#8601#8611#0" expanded="true" />
-                <element signature="e#9644#9654#0" expanded="true" />
-                <element signature="e#9732#9742#0" expanded="true" />
-                <element signature="e#10588#10598#0" expanded="true" />
-                <element signature="e#11354#11374#0" expanded="true" />
-                <element signature="e#13488#13498#0" expanded="true" />
-                <element signature="e#15206#15216#0" expanded="true" />
-                <element signature="e#16792#16802#0" expanded="true" />
-                <element signature="e#18431#18441#0" expanded="true" />
-                <element signature="e#18483#18493#0" expanded="true" />
-                <element signature="e#21038#21048#0" expanded="true" />
-                <element signature="e#21654#21664#0" expanded="true" />
-                <element signature="e#21712#21722#0" expanded="true" />
-                <element signature="e#24796#24806#0" expanded="true" />
-                <element signature="e#24906#24916#0" expanded="true" />
-                <element signature="e#29587#29597#0" expanded="true" />
-                <element signature="e#31187#31188#0" expanded="true" />
-                <element signature="e#31249#31250#0" expanded="true" />
-                <element signature="e#32303#32304#0" expanded="true" />
-                <element signature="e#32384#32385#0" expanded="true" />
+                <element signature="e#858#876#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -655,7 +620,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#858#876#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -932,9 +900,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Easy2/PathSumIII.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-125">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="-390">
+          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#858#876#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
