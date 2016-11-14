@@ -22,6 +22,7 @@ public class ExcelSheetColumnTitle {
             else
                 s = (char)(65+(n%26-1));
             res.append(s);
+            //整除
             n /= 26;
         }
         return res.reverse().toString();
