@@ -3,6 +3,7 @@ package Easy2;
 import Easy.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -57,6 +58,30 @@ public class BinaryTreeLevelOrderTraversalII {
         dfs(root.right, level+1, res);
     }
 
+    //迭代方法  2ms
+    public List<List<Integer>> levelOrderBottom1(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.push(root);
+        if(root == null)
+            return res;
+
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> list = new ArrayList<>();
+            for(int i = 0; i < size; i++) {
+                TreeNode cur = queue.removeFirst();
+                list.add(cur.val);
+                if(cur.left != null)
+                    queue.add(cur.left);
+                if(cur.right != null)
+                    queue.add(cur.right);
+            }
+            res.add(0, list);
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(3);
         TreeNode node2 = new TreeNode(9);
@@ -70,6 +95,6 @@ public class BinaryTreeLevelOrderTraversalII {
         node3.right = node5;
 
         BinaryTreeLevelOrderTraversalII b = new BinaryTreeLevelOrderTraversalII();
-        System.out.println(b.levelOrderBottom(node1));
+        System.out.println(b.levelOrderBottom1(node1));
     }
 }
