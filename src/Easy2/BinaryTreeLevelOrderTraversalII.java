@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 102题
- * 从上至下层序遍历二叉树中的节点，每一层节点集是一个list，返回二叉树的节点集List<List<Integer>>
+ * 层序遍历二叉树中的节点，每一层节点集是一个list，返回二叉树的节点集List<List<Integer>>
  * Created by ly on 2016/11/15.
  */
 public class BinaryTreeLevelOrderTraversal {
