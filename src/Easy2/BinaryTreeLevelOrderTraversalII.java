@@ -58,6 +58,27 @@ public class BinaryTreeLevelOrderTraversalII {
         dfs(root.right, level+1, res);
     }
 
+    //2ms
+    public List<List<Integer>> levelOrderBottom2(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        if(root == null)
+            return result;
+        dfs2(root, 0, result);
+        return result;
+    }
+    public static void dfs2(TreeNode root, int level, List<List<Integer>> res) {
+        if(root == null)
+            return ;
+        //添加一个新的ArrayList表示新的一层
+        if(level > res.size()-1) {
+            res.add(0, new ArrayList<>());
+        }
+
+        res.get(res.size() - 1 - level).add(root.val);   //获取level层的list并将当前节点数据添加进去
+        dfs2(root.left, level+1, res);   // 递归处理下一层的左子树和右子树
+        dfs2(root.right, level+1, res);
+    }
+
     //迭代方法  2ms
     public List<List<Integer>> levelOrderBottom1(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
@@ -95,6 +116,6 @@ public class BinaryTreeLevelOrderTraversalII {
         node3.right = node5;
 
         BinaryTreeLevelOrderTraversalII b = new BinaryTreeLevelOrderTraversalII();
-        System.out.println(b.levelOrderBottom1(node1));
+        System.out.println(b.levelOrderBottom2(node1));
     }
 }
