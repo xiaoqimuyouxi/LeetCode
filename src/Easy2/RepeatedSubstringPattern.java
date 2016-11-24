@@ -5,7 +5,7 @@ package Easy2;
  * Created by ly on 2016/11/19.
  */
 public class RepeatedSubstringPattern {
-    //O(n^2)
+    //O(n^2)    58ms
     public boolean repeatedSubstringPattern(String str) {
         if(str.length() < 2)
             return false;
@@ -34,9 +34,40 @@ public class RepeatedSubstringPattern {
         return true;
     }
 
+    //错的。。。。。。。。
+    public boolean repeatedSubstringPattern1(String str) {
+        if(str.length() < 2)
+            return false;
+        int len = str.length();
+        char[] arr = str.toCharArray();
+        boolean flag = false;
+        int low = 0;
+        int fast = 1;
+        while(fast < len) {
+            if(arr[fast] == arr[0]) {
+                for(low = 0; fast < len;) {
+                    if(arr[low] == arr[fast]) {
+                        flag = true;
+                        low++;
+                        fast++;
+                    }
+                    else {
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            else {
+                fast++;
+                flag = false;
+            }
+        }
+        return flag && low*2>=len;
+    }
+
     public static void main(String[] args) {
         RepeatedSubstringPattern r = new RepeatedSubstringPattern();
-        boolean flag = r.repeatedSubstringPattern("abab");
+        boolean flag = r.repeatedSubstringPattern1("aabaaba");
         System.out.println(flag);
     }
 }
