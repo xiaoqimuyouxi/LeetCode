@@ -2,12 +2,14 @@ package Easy2;
 
 import Easy.TreeNode;
 
+import java.util.Stack;
+
 /**
  * 101题     判断二叉树是否是对称数
  * Created by ly on 2016/12/7.
  */
 public class SymmetricTree {
-    //1ms
+    //1ms 采用递归的方法
     public boolean isSymmetric(TreeNode root) {
         if(root == null || (root.left == null && root.right == null))
             return true;
@@ -62,6 +64,39 @@ public class SymmetricTree {
         return leftComp && rightComp;
     }
 
+    //3ms 采用迭代的方法
+    public boolean isSymmetric1(TreeNode root) {
+        if(root == null || (root.left==null && root.right==null))
+            return true;
+        else if(root.left == null || root.right == null)
+            return false;
+
+        if(root.left.val != root.right.val)
+            return false;
+
+        Stack<TreeNode> s1 = new Stack<>();
+        Stack<TreeNode> s2 = new Stack<>();
+
+        s1.push(root.left);
+        s2.push(root.right);
+
+        while(!s1.isEmpty() && !s2.isEmpty()) {
+            TreeNode n1 = s1.pop();
+            TreeNode n2 = s2.pop();
+            if(n1 == null && n2 == null)
+                continue;
+            if(n1!=null && n2!=null && n1.val==n2.val) {
+                s1.push(n1.right);  //这里与比较两个二叉树是否相等不同
+                s1.push(n1.left);   //这里两个栈push下去的左右结点顺序不同
+                s2.push(n2.left);
+                s2.push(n2.right);
+            }
+            else
+                return false;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(1);
         TreeNode node2 = new TreeNode(2);
@@ -96,6 +131,6 @@ public class SymmetricTree {
 
         SymmetricTree st = new SymmetricTree();
 
-        System.out.println(st.isSymmetric(node1));
+        System.out.println(st.isSymmetric1(node1));
     }
 }
