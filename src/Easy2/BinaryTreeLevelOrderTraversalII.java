@@ -50,7 +50,7 @@ public class BinaryTreeLevelOrderTraversalII {
             return ;
         //添加一个新的ArrayList表示新的一层
         if(level >= res.size()) {
-            res.add(new ArrayList<>());
+            res.add(new ArrayList<Integer>());
         }
 
         res.get(level).add(root.val);   //获取level层的list并将当前节点数据添加进去
@@ -71,7 +71,7 @@ public class BinaryTreeLevelOrderTraversalII {
             return ;
         //添加一个新的ArrayList表示新的一层
         if(level > res.size()-1) {
-            res.add(0, new ArrayList<>());
+            res.add(0, new ArrayList<Integer>());
         }
 
         res.get(res.size() - 1 - level).add(root.val);   //获取level层的list并将当前节点数据添加进去
