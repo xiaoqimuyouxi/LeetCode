@@ -57,7 +57,7 @@ public class LinkedListCycle {
 
     public static void main(String[] args) {
         ListNode listNode = new ListNode();
-        ListNode head = listNode.test();
+        ListNode head = listNode.generateList(new int[]{});
         System.out.println(hasCycle1(head));
 
         ListNode n1 = new ListNode(1);
