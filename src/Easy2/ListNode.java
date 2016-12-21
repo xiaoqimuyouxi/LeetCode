@@ -25,4 +25,11 @@ public class ListNode {
         }
         return head;
     }
+
+    public static void returnList(ListNode head) {
+        while(head != null) {
+            System.out.print(head.val + "  ");
+            head = head.next;
+        }
+    }
 }
