@@ -28,6 +28,7 @@ public class SortDemo {
 
     /**
      * 插入排序
+     * 时间复杂度O(n^2)
      * @param arr
      * @return
      */
@@ -75,6 +76,44 @@ public class SortDemo {
         return arr;
     }
 
+    /**
+     * 快速排序
+     * 利用递归的思想
+     * 平均时间复杂度O(nlogn)，最差时间复杂度O(n^2)
+     * @param arr
+     * @return
+     */
+    public static int[] QuickSort(int[] arr) {
+        return QSort(arr, 0, arr.length-1);
+    }
+
+    public static int[] QSort(int[] arr, int low, int high) {
+        int mid;
+        if(low < high) {
+            mid = partition(arr, low, high);
+            QSort(arr, low, mid-1);     //对低子表递归排序
+            QSort(arr, mid+1, high);    //对高子表递归排序
+        }
+        return arr;
+    }
+
+    public static int partition(int[] arr, int low, int high) {
+        int pivotkey = arr[low];    //用子表的第一个值作为枢轴值
+        while (low < high) {    //从表的两端交替向中间扫描
+            while (low < high && arr[high] >= pivotkey)
+                high--;
+            int tmp = arr[low]; //将比枢轴小的数据交换到低端
+            arr[low] = arr[high];
+            arr[high] = tmp;
+            while (low < high && arr[low] <= pivotkey)
+                low++;
+            int tmp1 = arr[low];    //将比枢轴大的数据交换到高端
+            arr[low] = arr[high];
+            arr[high] = tmp1;
+        }
+        return low;     //返回枢轴所在位置
+    }
+
     public static void main(String[] args) {
         int[] a = {3,1,6,9,2,5,7};
         int[] arr = bubbleSort(a);
@@ -94,5 +133,11 @@ public class SortDemo {
             System.out.print(crr[i] +"  ");
         }
         System.out.println("选择");
+
+        int[] drr = selectSort(a);
+        for(int i = 0; i < drr.length; i++) {
+            System.out.print(drr[i] +"  ");
+        }
+        System.out.println("快速");
     }
 }
