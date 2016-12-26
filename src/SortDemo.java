@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 /**
  * 几种排序算法总结
  * Created by ly on 2016/12/20.
@@ -87,7 +89,7 @@ public class SortDemo {
         return QSort(arr, 0, arr.length-1);
     }
 
-    public static int[] QSort(int[] arr, int low, int high) {
+    private static int[] QSort(int[] arr, int low, int high) {
         int mid;
         if(low < high) {
             mid = partition(arr, low, high);
@@ -97,7 +99,7 @@ public class SortDemo {
         return arr;
     }
 
-    public static int partition(int[] arr, int low, int high) {
+    private static int partition(int[] arr, int low, int high) {
         int pivotkey = arr[low];    //用子表的第一个值作为枢轴值
         while (low < high) {    //从表的两端交替向中间扫描
             while (low < high && arr[high] >= pivotkey)
@@ -114,6 +116,124 @@ public class SortDemo {
         return low;     //返回枢轴所在位置
     }
 
+    /**
+     * 希尔排序
+     * @param arr
+     * @return
+     */
+    public static int[] shellSort(int[] arr) {
+        int i, j;
+        int increment = 0;
+        while (increment < arr.length/3) {
+            increment = increment * 3 + 1;
+        }
+        for (; increment > 0; increment/=3) {
+            for(i = increment; i < arr.length; i++) {
+                int tmp = arr[i];
+                for(j = i-increment; j >= 0 && tmp < arr[j]; j -= increment) {
+                    arr[j+increment] = arr[j];
+                }
+                arr[j+increment] = tmp;
+            }
+        }
+
+        return arr;
+    }
+
+    public static int[] MergeSort(int[] arr) {
+        if(arr.length <= 1) {
+            return arr;
+        }
+
+        return MSort(arr, 0, arr.length-1);
+    }
+
+    private static int[] MSort(int[] arr, int start, int end) {
+        if(arr.length <= 1) {
+            return arr;
+        }
+
+        if(start >= end) {
+            return arr;
+        }
+        int mid = (start + end)/2;
+        int start2 = mid+1;
+        MSort(arr, start, mid);
+        MSort(arr, start2, end);
+
+        //合并
+        int[] tmp = new int[arr.length];
+        int index = start;
+        int temp = start;
+        while (start <= mid && start2 <= end) {
+            if(arr[start] <= arr[start2]) {
+                tmp[index++] = arr[start++];
+            }
+            else {
+                tmp[index++] = arr[start2++];
+            }
+        }
+        while (start <= mid) {
+            tmp[index++] = arr[start++];
+        }
+        while (start2 <= end) {
+            tmp[index++] = arr[start2++];
+        }
+
+        for (int i = temp; i < end+1; i++) {
+            arr[i] = tmp[i];
+        }
+        return arr;
+    }
+
+    public static int[] mergeSort2(int[] arr) {
+        if(arr.length <= 1) {
+            return arr;
+        }
+        int window = 1;
+        int[] tmp = new int[arr.length];
+        for (; window < arr.length; window*=2) {
+            for(int start = 0; start < arr.length; start += 2*window) {
+                int start1 = start;
+                int end1, end2;
+                if(start1+window < arr.length) {
+                    end1 = start1+window;
+                }
+                else {
+                    end1 = arr.length;
+                }
+                int start2 = end1;
+                if(start1+2*window < arr.length) {
+                    end2 = start1+2*window;
+                }
+                else {
+                    end2 = arr.length;
+                }
+
+                int index = start1;
+                while (start1 < end1 && start2 < end2) {
+                    if(arr[start1] < arr[start2]) {
+                        tmp[index++] = arr[start1++];
+                    }
+                    else {
+                        tmp[index++] = arr[start2++];
+                    }
+                }
+
+                while (start1 < end1) {
+                    tmp[index++] = arr[start1++];
+                }
+                while (start2 < end2) {
+                    tmp[index++] = arr[start2++];
+                }
+                for(int i = start; i < end2; i++) {
+                    arr[i] = tmp[i];
+                }
+            }
+        }
+        return arr;
+    }
+
     public static void main(String[] args) {
         int[] a = {3,1,6,9,2,5,7};
         int[] arr = bubbleSort(a);
@@ -122,22 +242,47 @@ public class SortDemo {
         }
         System.out.println("冒泡");
 
-        int[] brr = insertSort(a);
+        int[] b = {3,1,6,9,2,5,7};
+        int[] brr = insertSort(b);
         for(int i = 0; i < brr.length; i++) {
             System.out.print(brr[i] +"  ");
         }
         System.out.println("插入");
 
-        int[] crr = selectSort(a);
+        int[] c = {3,1,6,9,2,5,7};
+        int[] crr = selectSort(c);
         for(int i = 0; i < crr.length; i++) {
             System.out.print(crr[i] +"  ");
         }
         System.out.println("选择");
 
-        int[] drr = selectSort(a);
+        int[] d = {3,1,6,9,2,5,7};
+        int[] drr = QuickSort(d);
         for(int i = 0; i < drr.length; i++) {
             System.out.print(drr[i] +"  ");
         }
         System.out.println("快速");
+
+        int[] e = {3,1,6,9,2,5,7};
+        int[] err = shellSort(e);
+        for(int i = 0; i < err.length; i++) {
+            System.out.print(err[i] +"  ");
+        }
+        System.out.println("希尔");
+
+        int[] f = {3,1,6,9,2,5,7};
+        int[] frr = MergeSort(f);
+        for(int i = 0; i < frr.length; i++) {
+            System.out.print(frr[i] +"  ");
+        }
+        System.out.println("归并");
+
+
+        int[] g = {3,1,6,9,2,5,7};
+        int[] grr = mergeSort2(g);
+        for(int i = 0; i < grr.length; i++) {
+            System.out.print(grr[i] +"  ");
+        }
+        System.out.println("归并2");
     }
 }
