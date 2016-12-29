@@ -80,6 +80,29 @@ public class AddBinary {
         return res.reverse().toString();
     }
 
+    //4ms
+    public String addBinary1(String a, String b) {
+        StringBuilder res = new StringBuilder();
+        int i = a.length()-1;
+        int j = b.length()-1;
+        int carry = 0;  //进位
+        while (i > -1 || j > -1) {
+            int sum = carry;
+            if(i > -1) {
+                sum += a.charAt(i--)-'0';
+            }
+            if(j > -1) {
+                sum += b.charAt(j--)-'0';
+            }
+            res.append(sum%2);
+            carry = sum/2;
+        }
+        if(carry != 0) {
+            res.append(carry);
+        }
+        return res.reverse().toString();
+    }
+
     public static void main(String[] args) {
         AddBinary ab = new AddBinary();
         System.out.println(ab.addBinary("11010101", "101010101"));
