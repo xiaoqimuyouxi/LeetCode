@@ -10,6 +10,7 @@ import java.util.Arrays;
  * Created by ly on 2017/1/10.
  */
 public class Heaters {
+    //22ms
     public int findRadius(int[] houses, int[] heaters) {
         Arrays.sort(houses);
         Arrays.sort(heaters);
