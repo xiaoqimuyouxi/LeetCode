@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cb99a00-6e6c-4c96-9a07-6d087053f787" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Easy3/MaxConsecutiveOnes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LeetCode.iws" />
@@ -801,7 +800,7 @@
       <workItem from="1484044376111" duration="6328000" />
       <workItem from="1484186024483" duration="5196000" />
       <workItem from="1484205016022" duration="124000" />
-      <workItem from="1484709608995" duration="3308000" />
+      <workItem from="1484709608995" duration="3325000" />
     </task>
     <task id="LOCAL-00001" summary="求加热器能够覆盖所有房子的最小半径">
       <created>1484050255390</created>
@@ -839,11 +838,17 @@
       <option name="project" value="LOCAL" />
       <updated>1484720651320</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="求二进制数组中连续为1的个数（最大值）">
+      <created>1484722676179</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1484722676179</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89942000" />
+    <option name="totallyTimeSpent" value="89959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
@@ -889,7 +894,8 @@
     <MESSAGE value="求加热器能够覆盖所有房子的最小半径" />
     <MESSAGE value="396题 旋转函数" />
     <MESSAGE value="求四个数组中在每个数组里任意找一个元素加起来和为0的个数" />
-    <option name="LAST_COMMIT_MESSAGE" value="求四个数组中在每个数组里任意找一个元素加起来和为0的个数" />
+    <MESSAGE value="求二进制数组中连续为1的个数（最大值）" />
+    <option name="LAST_COMMIT_MESSAGE" value="求二进制数组中连续为1的个数（最大值）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
