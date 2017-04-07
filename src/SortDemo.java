@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * 几种排序算法总结
@@ -28,6 +31,24 @@ public class SortDemo {
         return arr;
     }
 
+    public static void bubbleSort1(int[] arr) {
+        //需要arr.length次循环，每一次循环找出当前循环中最大的数
+        for(int i = 0; i < arr.length-1; i++) {
+            //每次找到的最大的数沉到最末尾以后不再比较这个数
+            for(int j = 0; j < arr.length-i-1; j++) {
+                if(arr[j] > arr[j+1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = tmp;
+                }
+            }
+        }
+    }
+
+    public static void bubbleSort2(List<Integer> arr) {
+        arr.add(90);
+    }
+
     /**
      * 插入排序
      * 时间复杂度O(n^2)
@@ -37,12 +58,12 @@ public class SortDemo {
     public static int[] insertSort(int[] arr) {
         if(arr.length <= 1)     return arr;
         for(int i = 0; i < arr.length-1; i++) {
-            if(arr[i] > arr[i+1]) {
-                int tmp = arr[i];
-                arr[i] = arr[i+1];
-                arr[i+1] = tmp;
+//            if(arr[i] > arr[i+1]) {
+//                int tmp = arr[i];
+//                arr[i] = arr[i+1];
+//                arr[i+1] = tmp;
                 //如果当前比较的两个数需要交换，则交换后较小的数需要继续和前面的数比较
-                for(int j = i; j > 0; j--) {
+                for(int j = i+1; j > 0; j--) {  //j=i
                     if(arr[j-1] > arr[j]) {
                         int tmp1 = arr[j];
                         arr[j] = arr[j-1];
@@ -51,7 +72,7 @@ public class SortDemo {
                     else
                         break;
                 }
-            }
+//            }
         }
         return arr;
     }
@@ -140,6 +161,12 @@ public class SortDemo {
         return arr;
     }
 
+    /**
+     * 归并排序
+     * 时间复杂度O(nlogn)
+     * @param arr
+     * @return
+     */
     public static int[] MergeSort(int[] arr) {
         if(arr.length <= 1) {
             return arr;
@@ -234,6 +261,59 @@ public class SortDemo {
         return arr;
     }
 
+    /**
+     * 二叉堆的数组从下标1开始存储，而不是0，若当前节点为i，则左子节点为2i，右子节点为2i+1，父节点为i/2
+     *
+     * 思路：
+     *     1、构建大顶堆maxHeap（下标从0开始，所以和二叉堆有细微差别，节点i的左子节点为2i+1）
+     *     2、大顶堆的0位置元素显然是最大的，将这个数沉到数组最末端
+     *     3、重复步骤1、2
+     * @param arr
+     * @return
+     */
+    public static int[] heapSort(int[] arr) {
+        if(arr.length <= 1) {
+            return arr;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            maxHeap(arr, arr.length-1-i);
+            swap(arr, 0, arr.length-1-i);
+        }
+        return arr;
+    }
+
+    //构建大顶堆
+    public static void maxHeap(int[] arr, int lastIndex) {
+        for (int i = (lastIndex-1)/2; i >= 0; i--) {
+            int k = i;  //保存当前正在判断节点的索引
+            //如果当前节点存在子节点（判断依据是其左子节点索引在lastIndex范围内）
+            while (2*k+1 <= lastIndex) {
+                int biggerIndex = 2*k + 1;  //biggerIndex总是记录值较大的节点的索引，初始值为左子节点索引
+                if(biggerIndex < lastIndex) {   //如果右子节点存在，否则biggerIndex=lastIndex
+                    if(arr[biggerIndex] < arr[biggerIndex+1]) {
+                        //如果右子节点比左子节点的值大，则biggerIndex记录的是右子节点的值
+                        biggerIndex++;
+                    }
+                }
+                if(arr[k] < arr[biggerIndex]) {
+                    //如果当前节点值小于其所有子节点的值，那么交换，//将当前节点索引设置为biggerIndex
+                    swap(arr, k, biggerIndex);
+                    k = biggerIndex;
+                }
+                else
+                    break;
+            }
+        }
+
+    }
+
+    public static void swap(int[] arr, int a, int b) {
+        int tmp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = tmp;
+    }
+
     public static void main(String[] args) {
         int[] a = {3,1,6,9,2,5,7};
         int[] arr = bubbleSort(a);
@@ -284,5 +364,27 @@ public class SortDemo {
             System.out.print(grr[i] +"  ");
         }
         System.out.println("归并2");
+
+        int[] h = {3,1,6,9,2,5,7};
+        int[] hrr = heapSort(h);
+        for (int i = 0; i < hrr.length; i++) {
+            System.out.print(hrr[i] + "  ");
+        }
+        System.out.println("堆排序");
+
+        int[] h1 = {3,1,6,9,2,5,7};
+        bubbleSort1(h1);
+        for (int i = 0; i < h1.length; i++) {
+            System.out.print(h1[i] + "  ");
+        }
+        System.out.println("--------");
+
+        ArrayList<Integer> a1 = new ArrayList<>();
+        a1.add(3);
+        a1.add(5);
+        a1.add(1);
+        a1.add(2);
+        bubbleSort2(a1);
+        System.out.println(a1.toString());
     }
 }
