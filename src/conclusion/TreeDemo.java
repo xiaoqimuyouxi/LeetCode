@@ -1,13 +1,25 @@
 package conclusion;
 
 import Easy.TreeNode;
-import Easy2.PalindromeLinkedList;
-import sun.awt.image.ImageWatched;
-import sun.reflect.generics.tree.Tree;
-
 import java.util.*;
 
 /**
+ * 二叉树题目汇总
+ *
+ * 1、前序、中序、后序遍历二叉树，preOrder1，preOrder2,inOrder1,inOrder2,postOrder1,postOrder2
+ * 2、层序遍历二叉树，levelOrder1,levelOrder2
+ * 3、获得二叉树的深度，getDepth
+ * 4、获得二叉树的节点个数，getNodesNum
+ * 5、判断两棵二叉树是否为相同的二叉树，isSameTree
+ * 6、判断二叉树是否为平衡二叉树，isAVL
+ * 7、获得二叉树的叶子节点个数，getLeafNodeNum
+ * 8、获得二叉树第K层上的节点个数，getKthLevelNodesNum
+ * 9、将二叉查找树变为有序的双向链表，convertBST2DLL
+ * 10、求二叉树中两个节点的最低公共祖先节点，getLastCommonParent
+ * 11、求二叉树两个节点之间的最大距离，getMaxDistance
+ * 12、求从根节点出发到node的路径path,getNodePath
+ * 13、根据两个遍历序列重建二叉树，rebuildBinaryTreeByPreAndIn,rebuildBinaryTreeByInAndPost
+ * 14、判断二叉树是否为完全二叉树，isCompleteBinaryTree
  * Created by ly on 2017/4/7.
  */
 @SuppressWarnings("All")

@@ -1,11 +1,8 @@
 package Easy2;
 
-/**
- * Created by ly on 2016/10/23.
- */
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
     public ListNode(){}
     public ListNode(int val) {

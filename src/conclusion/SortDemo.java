@@ -1,12 +1,22 @@
+package conclusion;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
  * 几种排序算法总结
+ *
+ * 1、冒泡排序 bubbleSort
+ * 2、插入排序 insertSort
+ * 3、选择排序 selectSort
+ * 4、快速排序 QuickSort
+ * 5、希尔排序 shellSort
+ * 6、归并排序，递归与迭代 MergeSort
+ * 7、堆排序 heapSort
+ *
  * Created by ly on 2016/12/20.
  */
+@SuppressWarnings("ALL")
 public class SortDemo {
     /**
      * 冒泡排序
@@ -17,14 +27,12 @@ public class SortDemo {
     public static int[] bubbleSort(int[] arr) {
         if(arr.length <= 1)
             return arr;
-        //需要arr.length次循环，每一次循环找出当前循环中最大的数
+        //需要arr.length-1次循环，每一次循环找出当前循环中最大的数
         for(int i = 0; i < arr.length-1; i++) {
             //每次找到的最大的数沉到最末尾以后不再比较这个数
             for(int j = 0; j < arr.length-i-1; j++) {
                 if(arr[j] > arr[j+1]) {
-                    int tmp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = tmp;
+                    swap(arr, j, j+1);
                 }
             }
         }
@@ -32,7 +40,7 @@ public class SortDemo {
     }
 
     public static void bubbleSort1(int[] arr) {
-        //需要arr.length次循环，每一次循环找出当前循环中最大的数
+        //需要arr.length-1次循环，每一次循环找出当前循环中最大的数
         for(int i = 0; i < arr.length-1; i++) {
             //每次找到的最大的数沉到最末尾以后不再比较这个数
             for(int j = 0; j < arr.length-i-1; j++) {
@@ -65,9 +73,7 @@ public class SortDemo {
                 //如果当前比较的两个数需要交换，则交换后较小的数需要继续和前面的数比较
                 for(int j = i+1; j > 0; j--) {  //j=i
                     if(arr[j-1] > arr[j]) {
-                        int tmp1 = arr[j];
-                        arr[j] = arr[j-1];
-                        arr[j-1] = tmp1;
+                        swap(arr, j, j-1);
                     }
                     else
                         break;
@@ -90,9 +96,7 @@ public class SortDemo {
             //再用这个小的继续与后面的元素比较
             for(int j = i+1; j < arr.length; j++) {
                 if(arr[i] > arr[j]) {
-                    int tmp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = tmp;
+                    swap(arr, i, j);
                 }
             }
         }
@@ -162,7 +166,7 @@ public class SortDemo {
     }
 
     /**
-     * 归并排序
+     * 归并排序，递归解法
      * 时间复杂度O(nlogn)
      * @param arr
      * @return
@@ -213,6 +217,9 @@ public class SortDemo {
         return arr;
     }
 
+    /**
+     * 归并排序，迭代解法
+     */
     public static int[] mergeSort2(int[] arr) {
         if(arr.length <= 1) {
             return arr;
@@ -262,6 +269,8 @@ public class SortDemo {
     }
 
     /**
+     * 堆排序
+     *
      * 二叉堆的数组从下标1开始存储，而不是0，若当前节点为i，则左子节点为2i，右子节点为2i+1，父节点为i/2
      *
      * 思路：
