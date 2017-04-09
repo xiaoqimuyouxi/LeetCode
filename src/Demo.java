@@ -953,7 +953,8 @@ public class Demo {
      情况B: 路径不穿过根节点，而是左子树或右子树的最大距离路径，取其大者。
      只需要计算这两个情况的路径距离，并取其大者，就是该二叉树的最大距离
      */
-    public static Result getMaxDistanceRec(TreeNode root){
+
+   public static Result getMaxDistanceRec(TreeNode root){
         if(root == null){
             Result empty = new Result(0, -1);       // 目的是让调用方 +1 后，把当前的不存在的 (NULL) 子树当成最大深度为 0
             return empty;
