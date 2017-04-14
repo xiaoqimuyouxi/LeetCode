@@ -1,4 +1,4 @@
-package conclusion;
+package conclusion.basicStruct;
 
 import Easy2.ListNode;
 

@@ -1,4 +1,4 @@
-package conclusion;
+package conclusion.basicStruct;
 
 import Easy.TreeNode;
 import java.util.*;
@@ -68,8 +68,9 @@ public class TreeDemo {
 //        System.out.println(getDepth1(r1));
 //        System.out.println(getDepth2(r1));
 
-        System.out.println(getNodesNum1(r1));
-        System.out.println(getNodesNum2(r1));
+//        System.out.println(getNodesNum1(r1));
+//        System.out.println(getNodesNum2(r1));
+        System.out.println(getLastCommonParent2(r1, r5, r6).val);
     }
 
 
@@ -691,6 +692,42 @@ public class TreeDemo {
             return commonInLeft;
         }
         return commonInRight;
+    }
+
+    /**
+     * 获取两个节点的最低公共祖先节点，复杂度比较低，也是面试官想看到的解法
+     *      算法思路：
+     *          1）分别获得一条从根节点到指定节点的路径，该过程需要辅助空间List来存放路径上的节点
+     *          2）求这两条路径的最后一个橡胶的节点即为题目想要找到的节点
+     *      得到两条路在最坏情况下的时间复杂度是O(n),通常情况下两条路径的长度是O(logn)
+     */
+    public static TreeNode getLastCommonParent2(TreeNode root, TreeNode n1, TreeNode n2) {
+        if(root == null || n1 == null || n2 == null) {
+            return null;
+        }
+        ArrayList<TreeNode> path1 = new ArrayList<>();
+        getNodePath(root, n1, path1);
+        ArrayList<TreeNode> path2 = new ArrayList<>();
+        getNodePath(root, n2, path2);
+
+        return getCommonNode(path1, path2);
+
+    }
+
+    //获得两条路径的最后一个公共节点
+    public static TreeNode getCommonNode(List<TreeNode> path1, List<TreeNode> path2) {
+        int i = 0;
+        TreeNode res = null;
+        while (i < path1.size() && i < path2.size()) {
+            if(path1.get(i) == path2.get(i)) {
+                res = path1.get(i);
+                i++;
+            }
+            else {
+                break;
+            }
+        }
+        return res;
     }
 
     /**

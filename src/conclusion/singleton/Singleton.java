@@ -1,4 +1,4 @@
-package conclusion;
+package conclusion.singleton;
 
 /**
  * 单例模式总结

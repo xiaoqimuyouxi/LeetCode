@@ -1,4 +1,4 @@
-package conclusion;
+package conclusion.basicStruct;
 
 import java.util.ArrayList;
 import java.util.List;
