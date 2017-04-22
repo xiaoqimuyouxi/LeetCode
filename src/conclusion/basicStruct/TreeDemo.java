@@ -20,6 +20,7 @@ import java.util.*;
  * 12、求从根节点出发到node的路径path,getNodePath
  * 13、根据两个遍历序列重建二叉树，rebuildBinaryTreeByPreAndIn,rebuildBinaryTreeByInAndPost
  * 14、判断二叉树是否为完全二叉树，isCompleteBinaryTree
+ * 15、两颗二叉树A,B，判断B是不是A的子树 isSubTree
  * Created by ly on 2017/4/7.
  */
 @SuppressWarnings("All")
@@ -951,5 +952,134 @@ public class TreeDemo {
             this.height = height;
             this.isFull = isFull;
         }
+    }
+
+    /**
+     * 两颗二叉树A,B，判断B是不是A的子树
+     *
+     * 解题思路：
+     *      1）在树A中找到树B的根节点值一样的节点R
+     *      2）判断A中以R为根节点的子树是不是包含和树B一样的结构
+     */
+    public static boolean isSubTree(TreeNode root1, TreeNode root2) {
+        boolean result = false;
+        if(root1 != null && root2 != null) {    //两颗二叉树都不为空的时候
+            //如果在A中找到和B的根节点值相同的节点R，则调用doseTree1HasTree2做第二步判断
+            if(root1.val == root2.val) {
+                result = doseTree1HasTree2(root1, root2);
+            }
+            //如果在A中没有找到和B的根节点相同的节点R，则递归遍历左右子树寻找
+            if(!result) {
+                result = isSubTree(root1.left, root2);
+            }
+            if(!result) {
+                result = isSubTree(root1.right, root2);
+            }
+        }
+        return result;
+    }
+
+    //第二步，判断A中以R为根节点的子树是不是和树B有相同的结构
+    public static boolean doseTree1HasTree2(TreeNode root1, TreeNode root2) {
+        //这里一定是root2的判断在前，若先判断root1则可能会出现root1和root2都为空的情况，此时返回的是false答案将会是错误的，所以一定要先判断root2
+        if(root2 == null) {
+            return true;
+        }
+        if(root1 == null) {
+            return false;
+        }
+        if(root1.val != root2.val) {
+            return false;
+        }
+
+        //递归判断他们左右子节点的值是否相同
+        return doseTree1HasTree2(root1.left, root2.left) &&
+                doseTree1HasTree2(root1.right, root2.right);
+    }
+
+    /**
+     * 求一棵二叉树的镜像
+     *
+     * 解题过程：（递归）
+     *     先前序遍历这棵树的每个节点，如果遍历到的节点有子节点，则交换两个子节点（同时也是交换了它的左右子树），
+     *     当交换完所有非叶子结点的子节点以后，就得到了树的镜像
+     * 该解法会破坏原二叉树的结构
+     */
+    public static void mirrorTree(TreeNode root) {
+        //如果该树为空树或者是只有一个节点的树，则直接返回
+        if(root == null || (root.left == null && root.right == null)) {
+            return;
+        }
+        //交换左右子节点
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+
+        if(root.left != null) { //如果左子节点存在
+            //递归遍历左子树
+            mirrorTree(root.left);
+        }
+        if(root.right != null) {
+            mirrorTree(root.right);
+        }
+    }
+
+    /**
+     * 求一棵二叉树的镜像
+     *
+     *  迭代解法
+     *  仍然采用前序遍历的方法，用栈来实现
+     */
+    public static void mirrorTree2(TreeNode root) {
+        if(root == null) {
+            return;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode cur = stack.pop();
+
+            TreeNode temp = cur.left;
+            cur.left = cur.right;
+            cur.right = temp;
+
+            if(cur.right != null) { //前序遍历，先压入右节点，再压入左节点
+                stack.push(cur.right);
+            }
+            if(cur.left != null) {
+                stack.push(cur.left);
+            }
+        }
+    }
+
+    //不改变原二叉树的迭代解法
+    public static TreeNode mirrorTree3(TreeNode root) {
+        if(root == null) {
+             return null;
+        }
+        TreeNode newRoot = new TreeNode(root.val);
+
+        Stack<TreeNode> stack = new Stack<>();
+        Stack<TreeNode> newStack = new Stack<>();
+        stack.push(root);
+        newStack.push(newRoot);
+
+        while (!stack.isEmpty()) {
+            TreeNode cur = stack.pop();
+            TreeNode newCur = newStack.pop();
+
+            if(cur.right != null) {
+                stack.push(cur.right);
+                newCur.left = new TreeNode(cur.right.val);
+                newStack.push(newCur.left);
+            }
+            if(cur.left != null) {
+                stack.push(cur.left);
+                newCur.right = new TreeNode(cur.left.val);
+                newStack.push(newCur.right);
+            }
+        }
+        return newRoot;
     }
 }
