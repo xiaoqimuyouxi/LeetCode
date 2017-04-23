@@ -21,6 +21,7 @@ import java.util.*;
  * 13、根据两个遍历序列重建二叉树，rebuildBinaryTreeByPreAndIn,rebuildBinaryTreeByInAndPost
  * 14、判断二叉树是否为完全二叉树，isCompleteBinaryTree
  * 15、两颗二叉树A,B，判断B是不是A的子树 isSubTree
+ * 16、判断一个序列是否是二叉搜索树的后序遍历序列     verifySequenceOfBST
  * Created by ly on 2017/4/7.
  */
 @SuppressWarnings("All")
@@ -71,7 +72,10 @@ public class TreeDemo {
 
 //        System.out.println(getNodesNum1(r1));
 //        System.out.println(getNodesNum2(r1));
-        System.out.println(getLastCommonParent2(r1, r5, r6).val);
+//        System.out.println(getLastCommonParent2(r1, r5, r6).val);
+
+        int[] sequence = {3,8,5,11,15,12,9};
+        System.out.println(verifySequenceOfBST(sequence, 0, 6));
     }
 
 
@@ -1081,5 +1085,51 @@ public class TreeDemo {
             }
         }
         return newRoot;
+    }
+
+    /**
+     * 判断一个序列是否是二叉搜索树的后序遍历序列
+     *
+     *  根据后序遍历序列的规则，最后一个元素即根元素，比根元素小的是左子树，大的是右子树，然后递归判断
+     *
+     *  @param start    起始索引下标
+     *  @param end      结束索引下标
+     */
+    public static boolean verifySequenceOfBST(int[] sequence, int start, int end) {
+        if(sequence == null || start < 0 || end <= 0) {
+            return false;
+        }
+
+        int root = sequence[end];   //根节点就是最后一个元素
+        //在二叉搜索树中左子树的节点都比右子树小
+        int i = 0;
+        for (; i < end; i++) {
+            if(sequence[i] > root) {
+                break;
+            }
+        }
+
+        //在二叉搜索树中右子树的节点大于根节点
+        int j = i;  //右子树的第一个元素（序列中的元素）
+        for (; j < end; j++) {
+            if(sequence[j] < root) {
+                return false;
+            }
+        }
+
+        //判断左子树是不是二叉搜索树
+        boolean left = true;
+        i--;
+        if(i > 0) {
+            left = verifySequenceOfBST(sequence, 0, i);
+        }
+
+        //判断右子树是不是二叉搜索树
+        boolean right = true;
+        i++;
+        if(i < end) {
+            right = verifySequenceOfBST(sequence, i, end-1);
+        }
+        return (left && right);
     }
 }
