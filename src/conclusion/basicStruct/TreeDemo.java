@@ -31,7 +31,7 @@ public class TreeDemo {
                 / \
                2   3
               / \   \
-             4  5   6
+             4  5   4
      */
     public static void main(String[] args) {
         TreeNode r1 = new TreeNode(1);
@@ -39,7 +39,7 @@ public class TreeDemo {
         TreeNode r3 = new TreeNode(3);
         TreeNode r4 = new TreeNode(4);
         TreeNode r5 = new TreeNode(5);
-        TreeNode r6 = new TreeNode(6);
+        TreeNode r6 = new TreeNode(4);
 
         r1.left = r2;
         r1.right = r3;
@@ -74,8 +74,10 @@ public class TreeDemo {
 //        System.out.println(getNodesNum2(r1));
 //        System.out.println(getLastCommonParent2(r1, r5, r6).val);
 
-        int[] sequence = {3,8,5,11,15,12,9};
-        System.out.println(verifySequenceOfBST(sequence, 0, 6));
+//        int[] sequence = {3,8,5,11,15,12,9};
+//        System.out.println(verifySequenceOfBST(sequence, 0, 6));
+
+        findPath(r1, 8);
     }
 
 
@@ -1131,5 +1133,55 @@ public class TreeDemo {
             right = verifySequenceOfBST(sequence, i, end-1);
         }
         return (left && right);
+    }
+
+    /**
+     * 求二叉树中和为某一值的路径
+     *      题目描述：从树的根节点开始往下一直到叶节点所经过的节点形成一条路径
+     *
+     * 解题思路：
+     *      用前序遍历的方式访问某一节点时，把该节点加入到路径上，并且累加该节点的值。
+     *      如果该节点为叶子节点并且路径中节点值的和刚好等于输入的整数，则当前路径符合要求，可以打印出来；
+     *      如果当前节点不是叶子节点，则继续访问它的子节点。
+     *      当前节点访问结束后，递归函数自动回到它的父节点。（实际可以用栈来满足）
+     *      因此在退出之前要在路径上删除当前节点，并且减去当前节点的值，以确保返回父节点时路径刚好是从根节点到父节点的路径
+     */
+    public static void findPath(TreeNode root, int sum) {
+        if(root == null) {
+            return;
+        }
+        int currentSum = 0;
+        //用java里面LinkedList的add和removeLast方法实现栈的先进后出特性，这样方便和面打印路径
+        LinkedList<Integer> path = new LinkedList<>();    //用于存储路径
+
+
+        findPathTemp(root, sum, path, currentSum);
+    }
+    public static void findPathTemp(TreeNode root, int sum, LinkedList<Integer> path, int currentSum) {
+        currentSum += root.val;
+        path.addLast(root.val);
+
+        //如果是叶子节点，并且路径上节点值的和等于输入的整数
+        boolean isLeaf = false;
+        if(root.left == null && root.right == null) {
+            isLeaf = true;
+        }
+        if(currentSum == sum && isLeaf) {
+            System.out.println("A path is found:");
+            for (int i = 0; i < path.size(); i++) {
+                System.out.printf("%d\t", path.get(i));
+            }
+            System.out.println();
+        }
+
+        //如果不是叶子节点，则遍历它的子节点
+        if(root.left != null) {
+            findPathTemp(root.left, sum, path, currentSum);
+        }
+        if(root.right != null) {
+            findPathTemp(root.right, sum, path, currentSum);
+        }
+        //在返回父节点之前，在路径上删除当前节点
+        path.removeLast();
     }
 }

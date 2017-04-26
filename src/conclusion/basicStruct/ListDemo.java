@@ -17,6 +17,7 @@ import java.util.Stack;
  * 9、求两个单链表相交的第一个节点 getFirstCommonNode
  * 10、求有环单链表进入环的第一个节点 getFirstNodeInTheCycle
  * 11、用O(1)时间复杂度删除单链表中指定节点  deleteNode
+ * 12、复杂链表的复制   clone
  * Created by ly on 2017/4/9.
  */
 @SuppressWarnings("All")
@@ -472,5 +473,95 @@ public class ListDemo {
             }
 
         }
+    }
+
+    /**
+     * 复杂链表结构
+     */
+    private static class ComplexListNode {
+        int val;
+        ComplexListNode next;
+        ComplexListNode any;    //指向链表中的任意节点或者NULL
+
+        public ComplexListNode(int val) {
+            this.val = val;
+        }
+        public ComplexListNode() {
+
+        }
+    }
+
+    /**
+     * 复杂链表的复制
+     *
+     * 解题方法：
+     *  方法1：第一步复制原始链表上每一个节点，并用next指针连接起来；
+     *      第二步设置每个节点的any指针域，每找一个就要从原始链表的头部开始遍历查找
+     *      该方法时间复杂度是O(n^2)，空间复杂度O(1)
+     *  方法2：第一步同上，并建立原始链表与复制链表之间的hash表；
+     *      第二步设置每个节点的any指针域，这时候可以直接在hash表中查找；
+     *      时间复杂度O(n),空间复杂度O(n)
+     *  方法3：第一步复制原始链表的任意节点N并创建新节点N'，再把N'连接到N的next域
+     *      第二步设置每个节点的any指针域，因为N'是N的next指向的节点，那么N的any指向的节点的next即为N'的any指向的节点
+     *      第三步把长链表拆分成两个链表，把奇数位置的节点用next相连就是原始链表，偶数位置的节点用next相连就是复制链表
+     *      时间复杂度是O(n)
+     *
+     *  以下主要实现第三种方法
+     */
+    public static ComplexListNode clone(ComplexListNode head) {
+        cloneNodes(head);
+        connectAnyNode(head);
+        return reconnectNode(head);
+    }
+
+    //第一步复制节点并创建新节点，且把新节点连接到原节点的next域
+    //A -> B -> C -> D
+    //A -> A' -> B - > C -> D
+    public static void cloneNodes(ComplexListNode head) {
+        ComplexListNode repeatNode = head;
+        while (repeatNode != null) {
+            ComplexListNode cloned = new ComplexListNode();
+            cloned.val = repeatNode.val;
+            cloned.next = repeatNode.next;
+            cloned.any = null;
+
+            repeatNode.next = cloned;
+            repeatNode = cloned.next;
+        }
+    }
+
+    //第二步设置每个节点的any指针域，因为N'是N的next指向的节点，那么N的any指向的节点的next即为N'的any指向的节点
+    public static void connectAnyNode(ComplexListNode head) {
+        ComplexListNode node = head;
+        while (node != null) {
+            ComplexListNode cloned = node.next;
+            if(node.any != null) {
+                cloned.any = node.any.next;
+            }
+            node = cloned.next;
+        }
+    }
+
+    //把第二步得到的链表拆分成两个链表
+    //A -> A' -> B -> B' -> C -> C' -> D -> D'
+    //A -> B -> C -> D      A' -> B' -> C' ->D'
+    public static ComplexListNode reconnectNode(ComplexListNode head) {
+        ComplexListNode newHead = null;
+        ComplexListNode node = head;
+        ComplexListNode newNode = null;
+        if(node != null) {
+            newHead = node.next;
+            newNode = node.next;
+            node.next = newNode.next;
+            node = node.next;
+        }
+
+        while (node != null) {
+            newNode.next = node.next;
+            newNode = node.next;
+            node.next = newNode.next;
+            node = node.next;
+        }
+        return newHead;
     }
 }
