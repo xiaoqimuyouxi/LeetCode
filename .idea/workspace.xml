@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cb99a00-6e6c-4c96-9a07-6d087053f787" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Consumer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Producer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Storage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/waitNotify/Consumer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/waitNotify/Producer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/waitNotify/Storage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/waitNotify/Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/waitNotify/readme.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/conclusion/proxy/dynamicProxy/MyInvocationHandler.java" afterPath="$PROJECT_DIR$/src/conclusion/proxy/dynamicProxy/MyInvocationHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/conclusion/consumerProducer/readme.txt" afterPath="$PROJECT_DIR$/src/conclusion/consumerProducer/readme.txt" />
     </list>
     <ignored path="LeetCode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,14 +39,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24629419">
+            <state vertical-scroll-proportion="0.0">
               <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
               <folding>
                 <element signature="e#88#112#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/conclusion/consumerProducer/readme.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49258837">
+              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -182,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/conclusion/proxy/dynamicProxy/MyInvocationHandler.java" />
         <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/waitNotify/Producer.java" />
         <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/waitNotify/Consumer.java" />
-        <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/readme.txt" />
         <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/waitNotify/readme.txt" />
         <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/readme.txt" />
         <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/waitNotify/Storage.java" />
@@ -191,6 +189,7 @@
         <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Consumer.java" />
         <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Producer.java" />
         <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Storage.java" />
+        <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/readme.txt" />
       </list>
     </option>
   </component>
@@ -971,7 +970,7 @@
       <workItem from="1492998696450" duration="10256000" />
       <workItem from="1493170610737" duration="3098000" />
       <workItem from="1493441270731" duration="34000" />
-      <workItem from="1493688077251" duration="9869000" />
+      <workItem from="1493688077251" duration="9933000" />
     </task>
     <task id="LOCAL-00001" summary="求加热器能够覆盖所有房子的最小半径">
       <created>1484050255390</created>
@@ -1135,11 +1134,17 @@
       <option name="project" value="LOCAL" />
       <updated>1493688187987</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="生产者消费者模式">
+      <created>1493709360314</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1493709360314</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257032000" />
+    <option name="totallyTimeSpent" value="257096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -1228,7 +1233,8 @@
     <MESSAGE value="二叉树" />
     <MESSAGE value="二叉树与链表" />
     <MESSAGE value="代理" />
-    <option name="LAST_COMMIT_MESSAGE" value="代理" />
+    <MESSAGE value="生产者消费者模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="生产者消费者模式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1593,14 +1599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/conclusion/consumerProducer/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/conclusion/consumerProducer/waitNotify/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1676,11 +1674,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24629419">
+        <state vertical-scroll-proportion="0.0">
           <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
           <folding>
             <element signature="e#88#112#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conclusion/consumerProducer/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49258837">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
