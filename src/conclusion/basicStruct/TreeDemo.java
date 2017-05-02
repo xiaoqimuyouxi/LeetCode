@@ -705,7 +705,7 @@ public class TreeDemo {
      * 获取两个节点的最低公共祖先节点，复杂度比较低，也是面试官想看到的解法
      *      算法思路：
      *          1）分别获得一条从根节点到指定节点的路径，该过程需要辅助空间List来存放路径上的节点
-     *          2）求这两条路径的最后一个橡胶的节点即为题目想要找到的节点
+     *          2）求这两条路径的最后一个相交的节点即为题目想要找到的节点
      *      得到两条路在最坏情况下的时间复杂度是O(n),通常情况下两条路径的长度是O(logn)
      */
     public static TreeNode getLastCommonParent2(TreeNode root, TreeNode n1, TreeNode n2) {

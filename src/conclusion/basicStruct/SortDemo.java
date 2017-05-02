@@ -192,7 +192,7 @@ public class SortDemo {
         MSort(arr, start, mid);
         MSort(arr, start2, end);
 
-        //合并
+        //合并两个分别有序的数组为一个有序数组
         int[] tmp = new int[arr.length];
         int index = start;
         int temp = start;
