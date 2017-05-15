@@ -5,5 +5,6 @@ package conclusion.factory;
  * Created by ly on 2017/4/9.
  */
 public interface Car {
+    int a = 0;
     void drive();
 }
