@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cb99a00-6e6c-4c96-9a07-6d087053f787" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/offer/P11Power.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/offer/P18HasSubTree.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/offer/P7MyQueue.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/offer/P7MyStack.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/offer/P20PrintMatrix.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LeetCode.iws" />
@@ -31,115 +28,22 @@
     <favorites_list name="LeetCode" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="P8MinNumberInRotateArray.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conclusion/offer/P8MinNumberInRotateArray.java">
+    <leaf>
+      <file leaf-file-name="P20PrintMatrix.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/conclusion/offer/P20PrintMatrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state vertical-scroll-proportion="-1.7203008">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="53" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NumberOf1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conclusion/offer/NumberOf1.java">
+      <file leaf-file-name="PrintMatrix20.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/conclusion/offer/PrintMatrix20.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="P14ReOrderArray.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conclusion/offer/P14ReOrderArray.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
-              <folding>
-                <element signature="e#3685#3686#0" expanded="true" />
-                <element signature="e#3720#3721#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StackPushAndPop22.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conclusion/offer/StackPushAndPop22.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TwoSum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Easy/TwoSum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyQueue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Easy2/MyQueue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="P7MyQueue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conclusion/offer/P7MyQueue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-              <folding>
-                <element signature="e#346#347#0" expanded="true" />
-                <element signature="e#379#380#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="P7MyStack.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conclusion/offer/P7MyStack.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#514#515#0" expanded="true" />
-                <element signature="e#546#547#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="P11Power.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/conclusion/offer/P11Power.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-              <folding>
-                <element signature="e#1538#1539#0" expanded="true" />
-                <element signature="e#1588#1589#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="P18HasSubTree.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/conclusion/offer/P18HasSubTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56898516">
-              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+              <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="67" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -167,7 +71,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/conclusion/socket/Client.java" />
         <option value="$PROJECT_DIR$/src/conclusion/socket/Server.java" />
         <option value="$PROJECT_DIR$/src/conclusion/socket/readme.txt" />
         <option value="$PROJECT_DIR$/src/conclusion/socket/MultiClient.java" />
@@ -218,6 +121,7 @@
         <option value="$PROJECT_DIR$/src/conclusion/offer/P7MyStack.java" />
         <option value="$PROJECT_DIR$/src/conclusion/offer/P11Power.java" />
         <option value="$PROJECT_DIR$/src/conclusion/offer/P18HasSubTree.java" />
+        <option value="$PROJECT_DIR$/src/conclusion/offer/P20PrintMatrix.java" />
       </list>
     </option>
   </component>
@@ -264,8 +168,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -341,6 +243,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -362,22 +266,7 @@
       <recent name="D:\java\eclipse\workspace\LeetCode\src\conclusion\consumerProducer\awaitSignal" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.P11Power">
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="LeetCode" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.P20PrintMatrix">
     <configuration default="false" name="FindPath" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -446,6 +335,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="conclusion.offer.P11Power" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="LeetCode" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="P20PrintMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="conclusion.offer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="conclusion.offer.P20PrintMatrix" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -859,19 +768,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Application.FindPath" />
-      <item index="2" class="java.lang.String" itemvalue="Application.P8MinNumberInRotateArray" />
-      <item index="3" class="java.lang.String" itemvalue="Application.P14ReOrderArray" />
-      <item index="4" class="java.lang.String" itemvalue="Application.P11Power" />
+      <item index="0" class="java.lang.String" itemvalue="Application.FindPath" />
+      <item index="1" class="java.lang.String" itemvalue="Application.P8MinNumberInRotateArray" />
+      <item index="2" class="java.lang.String" itemvalue="Application.P14ReOrderArray" />
+      <item index="3" class="java.lang.String" itemvalue="Application.P11Power" />
+      <item index="4" class="java.lang.String" itemvalue="Application.P20PrintMatrix" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.P11Power" />
-        <item index="1" class="java.lang.String" itemvalue="Application.P14ReOrderArray" />
-        <item index="2" class="java.lang.String" itemvalue="Application.P8MinNumberInRotateArray" />
-        <item index="3" class="java.lang.String" itemvalue="Application.FindPath" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.P20PrintMatrix" />
+        <item index="1" class="java.lang.String" itemvalue="Application.P11Power" />
+        <item index="2" class="java.lang.String" itemvalue="Application.P14ReOrderArray" />
+        <item index="3" class="java.lang.String" itemvalue="Application.P8MinNumberInRotateArray" />
+        <item index="4" class="java.lang.String" itemvalue="Application.FindPath" />
       </list>
     </recent_temporary>
   </component>
@@ -931,7 +840,8 @@
       <workItem from="1494811833353" duration="734000" />
       <workItem from="1497774247696" duration="6302000" />
       <workItem from="1497860600282" duration="8468000" />
-      <workItem from="1498527962586" duration="5479000" />
+      <workItem from="1498527962586" duration="5543000" />
+      <workItem from="1499163653241" duration="1181000" />
     </task>
     <task id="LOCAL-00001" summary="求加热器能够覆盖所有房子的最小半径">
       <created>1484050255390</created>
@@ -1137,7 +1047,13 @@
       <option name="project" value="LOCAL" />
       <updated>1497875648595</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="offer">
+      <created>1498544228038</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1498544228038</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1167,7 +1083,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319249000" />
+    <option name="totallyTimeSpent" value="320494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="0" />
@@ -1180,7 +1096,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23322332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23322332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21382637" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1235,7 +1151,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="396题 旋转函数" />
     <MESSAGE value="求四个数组中在每个数组里任意找一个元素加起来和为0的个数" />
     <MESSAGE value="求二进制数组中连续为1的个数（最大值）" />
     <MESSAGE value="all" />
@@ -1260,7 +1175,8 @@
     <MESSAGE value="杂" />
     <MESSAGE value="剑指offer" />
     <MESSAGE value="数组前部分奇数，后半部分偶数" />
-    <option name="LAST_COMMIT_MESSAGE" value="数组前部分奇数，后半部分偶数" />
+    <MESSAGE value="offer" />
+    <option name="LAST_COMMIT_MESSAGE" value="offer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1273,20 +1189,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/exercise/Tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conclusion/basicStruct/SortDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="194" column="28" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/conclusion/singleton/Singleton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1553,7 +1455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1561,7 +1462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1569,7 +1469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1577,10 +1476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
-          <folding>
-            <element signature="e#3685#3686#0" expanded="true" />
-            <element signature="e#3720#3721#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1588,7 +1483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1596,7 +1490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1604,7 +1497,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1612,10 +1504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1623,7 +1511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1631,11 +1518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1643,10 +1525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#1538#1539#0" expanded="true" />
-            <element signature="e#1588#1589#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1654,6 +1532,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.56898516">
           <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conclusion/offer/PrintMatrix20.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="67" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conclusion/offer/P20PrintMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7203008">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="53" selection-end-column="5" />
           <folding />
         </state>
       </provider>
