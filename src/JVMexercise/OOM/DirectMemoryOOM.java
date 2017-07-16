@@ -1,4 +1,4 @@
-package JVMexercise;
+package JVMexercise.OOM;
 
 import sun.misc.Unsafe;
 

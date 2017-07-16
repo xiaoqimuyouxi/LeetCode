@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cb99a00-6e6c-4c96-9a07-6d087053f787" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JVMexercise/DirectMemoryOOM.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JVMexercise/HeapOOM.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JVMexercise/JavaMethodAreaOOM.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JVMexercise/JavaVMStackOOM.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JVMexercise/JavaVMStackSOF.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JVMexercise/RuntimeConstantPoolOOM.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JVMexercise/RuntimeConstantPoolOOMtest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/socket/Client1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/conclusion/socket/Server1.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeetCode.iml" afterPath="$PROJECT_DIR$/LeetCode.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/JVMexercise/DirectMemoryOOM.java" afterPath="$PROJECT_DIR$/src/JVMexercise/OOM/DirectMemoryOOM.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/JVMexercise/HeapOOM.java" afterPath="$PROJECT_DIR$/src/JVMexercise/OOM/HeapOOM.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/JVMexercise/JavaMethodAreaOOM.java" afterPath="$PROJECT_DIR$/src/JVMexercise/OOM/JavaMethodAreaOOM.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/JVMexercise/JavaVMStackOOM.java" afterPath="$PROJECT_DIR$/src/JVMexercise/OOM/JavaVMStackOOM.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/JVMexercise/JavaVMStackSOF.java" afterPath="$PROJECT_DIR$/src/JVMexercise/OOM/JavaVMStackSOF.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/JVMexercise/RuntimeConstantPoolOOM.java" afterPath="$PROJECT_DIR$/src/JVMexercise/OOM/RuntimeConstantPoolOOM.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/JVMexercise/RuntimeConstantPoolOOMtest.java" afterPath="$PROJECT_DIR$/src/JVMexercise/OOM/RuntimeConstantPoolOOMtest.java" />
     </list>
     <ignored path="LeetCode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,7 +66,7 @@
         </entry>
       </file>
       <file leaf-file-name="HeapOOM.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JVMexercise/HeapOOM.java">
+        <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/HeapOOM.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
@@ -81,7 +78,7 @@
         </entry>
       </file>
       <file leaf-file-name="JavaVMStackSOF.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JVMexercise/JavaVMStackSOF.java">
+        <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/JavaVMStackSOF.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
@@ -91,7 +88,7 @@
         </entry>
       </file>
       <file leaf-file-name="JavaVMStackOOM.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JVMexercise/JavaVMStackOOM.java">
+        <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/JavaVMStackOOM.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
@@ -101,7 +98,7 @@
         </entry>
       </file>
       <file leaf-file-name="RuntimeConstantPoolOOM.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JVMexercise/RuntimeConstantPoolOOM.java">
+        <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/RuntimeConstantPoolOOM.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
@@ -113,7 +110,7 @@
         </entry>
       </file>
       <file leaf-file-name="RuntimeConstantPoolOOMtest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JVMexercise/RuntimeConstantPoolOOMtest.java">
+        <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/RuntimeConstantPoolOOMtest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
@@ -123,7 +120,7 @@
         </entry>
       </file>
       <file leaf-file-name="JavaMethodAreaOOM.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JVMexercise/JavaMethodAreaOOM.java">
+        <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/JavaMethodAreaOOM.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
@@ -135,7 +132,7 @@
         </entry>
       </file>
       <file leaf-file-name="DirectMemoryOOM.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/JVMexercise/DirectMemoryOOM.java">
+        <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/DirectMemoryOOM.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.21550742">
               <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
@@ -168,7 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/waitNotify/Test.java" />
         <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Test.java" />
         <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Consumer.java" />
         <option value="$PROJECT_DIR$/src/conclusion/consumerProducer/awaitSignal/Producer.java" />
@@ -219,6 +215,7 @@
         <option value="$PROJECT_DIR$/src/JVMexercise/RuntimeConstantPoolOOMtest.java" />
         <option value="$PROJECT_DIR$/src/JVMexercise/JavaMethodAreaOOM.java" />
         <option value="$PROJECT_DIR$/src/JVMexercise/DirectMemoryOOM.java" />
+        <option value="$PROJECT_DIR$/src/JVMexercise/OOM/DirectMemoryOOM.java" />
       </list>
     </option>
   </component>
@@ -451,11 +448,11 @@
     <configuration default="false" name="JavaVMStackSOF" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="JVMexercise.*" />
+          <option name="PATTERN" value="JVMexercise.OOM.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="JVMexercise.JavaVMStackSOF" />
+      <option name="MAIN_CLASS_NAME" value="JVMexercise.OOM.JavaVMStackSOF" />
       <option name="VM_PARAMETERS" value="-Xss128k" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -474,11 +471,11 @@
     <configuration default="false" name="JavaVMStackOOM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="JVMexercise.*" />
+          <option name="PATTERN" value="JVMexercise.OOM.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="JVMexercise.JavaVMStackOOM" />
+      <option name="MAIN_CLASS_NAME" value="JVMexercise.OOM.JavaVMStackOOM" />
       <option name="VM_PARAMETERS" value="-Xss2M" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -497,11 +494,11 @@
     <configuration default="false" name="DirectMemoryOOM" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="JVMexercise.*" />
+          <option name="PATTERN" value="JVMexercise.OOM.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="JVMexercise.DirectMemoryOOM" />
+      <option name="MAIN_CLASS_NAME" value="JVMexercise.OOM.DirectMemoryOOM" />
       <option name="VM_PARAMETERS" value="-Xmx:20M -XX:MaxDirectMemorySize=10M" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -1010,7 +1007,7 @@
       <workItem from="1500106423514" duration="2302000" />
       <workItem from="1500109297371" duration="659000" />
       <workItem from="1500110110408" duration="7342000" />
-      <workItem from="1500169024500" duration="606000" />
+      <workItem from="1500169024500" duration="768000" />
     </task>
     <task id="LOCAL-00001" summary="求加热器能够覆盖所有房子的最小半径">
       <created>1484050255390</created>
@@ -1228,7 +1225,13 @@
       <option name="project" value="LOCAL" />
       <updated>1499164854460</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="OOM">
+      <created>1500169770929</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1500169770929</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1258,7 +1261,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347497000" />
+    <option name="totallyTimeSpent" value="347659000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -1266,6 +1269,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6523652" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1279,7 +1283,6 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6523652" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1327,7 +1330,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="求二进制数组中连续为1的个数（最大值）" />
     <MESSAGE value="all" />
     <MESSAGE value="二叉树总结" />
     <MESSAGE value="conclusion" />
@@ -1352,7 +1354,8 @@
     <MESSAGE value="数组前部分奇数，后半部分偶数" />
     <MESSAGE value="offer" />
     <MESSAGE value="顺时针打印矩阵" />
-    <option name="LAST_COMMIT_MESSAGE" value="顺时针打印矩阵" />
+    <MESSAGE value="OOM" />
+    <option name="LAST_COMMIT_MESSAGE" value="OOM" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1682,7 +1685,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JVMexercise/HeapOOM.java">
+    <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/HeapOOM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
@@ -1692,7 +1695,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JVMexercise/JavaVMStackSOF.java">
+    <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/JavaVMStackSOF.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
@@ -1700,7 +1703,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JVMexercise/JavaVMStackOOM.java">
+    <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/JavaVMStackOOM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
@@ -1708,7 +1711,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JVMexercise/RuntimeConstantPoolOOM.java">
+    <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/RuntimeConstantPoolOOM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
@@ -1718,7 +1721,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JVMexercise/RuntimeConstantPoolOOMtest.java">
+    <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/RuntimeConstantPoolOOMtest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
@@ -1726,7 +1729,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JVMexercise/JavaMethodAreaOOM.java">
+    <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/JavaMethodAreaOOM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
@@ -1736,7 +1739,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JVMexercise/DirectMemoryOOM.java">
+    <entry file="file://$PROJECT_DIR$/src/JVMexercise/OOM/DirectMemoryOOM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21550742">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />

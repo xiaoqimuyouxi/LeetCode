@@ -1,4 +1,4 @@
-package JVMexercise;
+package JVMexercise.OOM;
 
 /**
  * VM args: -Xss2M  (这时候设置的大一些，创建在虚拟机栈和本地方法栈中出现内存溢出的异常)

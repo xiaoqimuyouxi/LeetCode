@@ -1,4 +1,4 @@
-package JVMexercise;
+package JVMexercise.OOM;
 
 /**
  * String.intern()返回引用的测试

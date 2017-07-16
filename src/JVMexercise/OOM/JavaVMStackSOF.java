@@ -1,4 +1,4 @@
-package JVMexercise;
+package JVMexercise.OOM;
 
 /**
  * VM args: -Xss128k

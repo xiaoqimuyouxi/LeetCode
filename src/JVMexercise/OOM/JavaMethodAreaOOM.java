@@ -1,4 +1,4 @@
-package JVMexercise;
+package JVMexercise.OOM;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
