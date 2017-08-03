@@ -1,6 +1,8 @@
 package JavaConcurrency;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 示例查看线程状态
