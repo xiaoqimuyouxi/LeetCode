@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
+ * 字符串的全排列
  * Created by ly on 2017/8/7.
  */
 public class P28SortString {
