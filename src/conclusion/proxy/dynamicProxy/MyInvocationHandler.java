@@ -3,10 +3,12 @@ package conclusion.proxy.dynamicProxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.HashMap;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * 如果要在方法执行的前后打印系统时间，如果只有一个方法需要这样做，那么采用静态代理绝对没问题，但是如果有10个上百个方法都需要这样做，那么就会写10个上百个
+ * 完全相同的代码，这样做是非常不理想的。  所以出现了动态代理
+ *
+ * 动态代理是 代理类在程序运行时动态创建的代理方式
  * Created by ly on 2017/4/10.
  */
 public class MyInvocationHandler implements InvocationHandler {
