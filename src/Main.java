@@ -4,6 +4,7 @@ import Easy.TreeNode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by ly on 2016/12/23.
@@ -15,17 +16,23 @@ public abstract class Main {
     }
 
     public static void main(String[] args) {
-        Demo demo = new Demo();
-        System.out.println(demo);
-        test(demo);
-        System.out.println(demo);
-        int a = 8;
-        long test = 012;
-        test1(a);
-        int x = 1;
-        float y = 2;
-        System.out.println(x/y);
+//        Demo demo = new Demo();
+//        System.out.println(demo);
+//        test(demo);
+//        System.out.println(demo);
+//        int a = 8;
+//        long test = 012;
+//        test1(a);
+//        int x = 1;
+//        float y = 2;
+//        System.out.println(x/y);
 
+        Scanner scanner = new Scanner(System.in);
+        String path = scanner.next();
+        String[] str = path.split("\\\\");
+        for (int i = 0; i < str.length; i++) {
+            System.out.println(str[i]);
+        }
     }
 
     private static int d ;
