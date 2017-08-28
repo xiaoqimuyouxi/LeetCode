@@ -27,17 +27,23 @@ public abstract class Main {
 //        float y = 2;
 //        System.out.println(x/y);
 
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
         String path = scanner.next();
         String[] str = path.split("\\\\");
         for (int i = 0; i < str.length; i++) {
             System.out.println(str[i]);
-        }
+        }*/
+        int x = 30, y = 4;
+        System.out.println(x+x/y+""+y);
+
     }
 
     private static int d ;
-    public void setD(int d) {
-        this.d = d;
+    public abstract void setD(int d);
+    private final void set(){
+        double i = 20;
+        byte b = 20 << 1;
+
     }
 
     private static void test(Demo demo){

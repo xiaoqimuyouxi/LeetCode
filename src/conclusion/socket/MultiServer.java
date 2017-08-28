@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashMap;
 
 /**
  * 基于TCP协议的Socket通信，实现用户登录服务器端
@@ -17,7 +18,6 @@ public class MultiServer {
             Socket socket = null;
             int count = 0;  //记录客户端的数量
             System.out.println("服务器即将启动，等待客户端的连接");
-
             //循环监听等待客户端的连接
             while (true) {
                 //调用accept()方法开始监听

@@ -20,6 +20,7 @@ public class Server {
         while (true) {
             Socket socket = null;
             try {
+//                System.out.println("准备接收客户端！");
                 socket = serverSocket.accept();
                 System.out.println("New connection accepted! " + socket.getInetAddress() + ": " + socket.getPort());
             } catch (IOException e) {
@@ -38,7 +39,7 @@ public class Server {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         Server server = new Server();
-        Thread.sleep(60000*10);
+//        Thread.sleep(60000*10);
         server.service();
     }
 }
