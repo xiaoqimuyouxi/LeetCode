@@ -15,14 +15,14 @@ public class MultiClient {
 
             //2.获取输出流，向服务器端发送信息
             OutputStream os = socket.getOutputStream(); //字节输出流
-            PrintWriter pw = new PrintWriter(os);   //将输出流包装成打印流
+            PrintWriter pw = new PrintWriter(os);   //将输出流包装成打印流（字符流）
             pw.write("用户名：dfwe, 密码：ddddd");
             pw.flush();
             socket.shutdownOutput();    //关闭输出流
 
             //3.获取输入流，并获取服务器端的响应信息
-            InputStream is = socket.getInputStream();
-            BufferedReader bf = new BufferedReader(new InputStreamReader(is));
+            InputStream is = socket.getInputStream();   //字节输入流
+            BufferedReader bf = new BufferedReader(new InputStreamReader(is));  //包装成字符流
             String info = null;
             while ((info = bf.readLine()) != null) {
                 System.out.println("我是客户端，服务器响应为：" + info);
