@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  */
 @SuppressWarnings("all")
 public class Booking {
-    HashMap<OrderInfo, String> order = new HashMap<>();
+    ArrayList<OrderInfo> order = new ArrayList<>();
     public void acceptOrder() {
         BufferedReader br = null;
         try {
@@ -41,19 +41,17 @@ public class Booking {
                             break;
                         }
                         else {
-//                            SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
-//                            String[] date = data[i].split("-");
                             LocalDate tt = LocalDate.parse(data[i]);
-//                            Date dt = new Date(changeTime(date[0]), changeTime(date[1]), changeTime(date[2]));
-//                            week = sdf.format(dt);
                             DayOfWeek day = tt.getDayOfWeek();
                             week = tt.getDayOfWeek();
                         }
                     }
-                    else if(i == 2 && !checkTime(data[i], info)) {
-                        System.out.println("Error: the booking is invalid!");
-                        isValid = false;
-                        break;
+                    else if(i == 2) {
+                        if(!checkTime(data[i], info)){
+                            System.out.println("Error: the booking is invalid!");
+                            isValid = false;
+                            break;
+                        }
                     }
                     else if(i == 3) {
                         if(data[i].length() != 1) {
@@ -89,18 +87,60 @@ public class Booking {
                 }
                 info.setUser(data[0]);
                 info.setDate(data[1]);
+                info.setTime(data[2]);
                 info.setPlat(data[3]);
                 info.setCancel(isCancle);
-                if(order.containsKey(info)) {
+
+                if(!isCancle) {
+                    for(OrderInfo info2 : order) {
+                        if(info.isDuplicate(info2)) {   //二者时间有重叠时
+                            if(info2.getCount() == 0) { //之前的预定没有被取消
+                                System.out.println("Error: the booking conflicts with existing bookings!");
+                                isValid = false;
+                                break;
+                            }
+                        }
+                    }
+                    if(!isValid) {
+                        continue;
+                    }
+                }
+
+                if(order.contains(info)) {
+                    int index = order.indexOf(info);
+                    OrderInfo info2 = order.get(index);
+                    String money = info2.getEcho();
                     if(isCancle) {
-                        String money = order.get(info);
+                        if(money.contains("违约金")){  //表示要取消的订单并不存在
+                            System.out.println("Error: the booking being cancelled does not exist!");
+                            continue;
+                        }
                         int m = Integer.parseInt(money.substring(0, money.length()-1)); //把元的单位去掉
                         float res = m * checkWeek(week);
-                        order.put(info, "违约金 " + res + "元");
+                        info.setCount(info.getCount()+1);   //违约次数加1
+                        info.setEcho("违约金 " + (int)res + "元");
+                        info.setMoney((int)res);
+                        order.remove(info2);    //删除原来的
+                        order.add(info);
                     }
                     else {  //预定时间冲突
-                        System.out.println("Error: the booking conflicts with existing bookings!");
-                        continue;
+                        //前面相同时间的已经取消了
+                        if(money.contains("违约金")){
+                            String plat = info.getPlat();
+                            info = new OrderInfo(info.getUser(), info.getDate(), info.getStart(), info.getEnd(),info.getTime(),
+                                    plat+info.getCount(), info.isCancel()); //场地加上违约次数，与之前违约的预定区别开来
+                            //这里会覆盖掉之前违约的预定，所以采用一个改变plat后的新对象
+                            int mm = computeCost(info, week);
+                            info.setCount(0);
+                            info.setEcho(mm + "元");
+                            info.setMoney(mm);
+                            order.remove(info2);
+                            order.add(info);
+                        }
+                        else {
+                            System.out.println("Error: the booking conflicts with existing bookings!");
+                            continue;
+                        }
                     }
                 }
                 else {  //计算该预定所需的费用
@@ -109,7 +149,10 @@ public class Booking {
                         continue;
                     }
                     int money = computeCost(info, week);
-                    order.put(info, money + "元");
+                    info.setEcho(money + "元");
+                    info.setMoney(money);
+                    info.setCount(0);
+                    order.add(info);
                 }
                 System.out.println("Success: the booking is accepted!");
             }
@@ -125,53 +168,24 @@ public class Booking {
             }
         }
 
-        System.out.println("收入汇总");
-        System.out.println("---");
-        ArrayList<OrderInfo> set = new ArrayList<>(order.keySet());
-        Collections.sort(set, new Comparator<OrderInfo>() {
+        Collections.sort(order, new Comparator<OrderInfo>() {
             @Override
             public int compare(OrderInfo o1, OrderInfo o2) {
-                if(o1.getPlat().equals(o2.getPlat())) {
+                String plat1 = o1.getPlat().substring(0, 1);    //由于为了使得违约后的时间点仍然可以预定场地，所以在场地后面加上了编号
+                String plat2 = o2.getPlat().substring(0, 1);
+                if(plat1.equals(plat2)) {
                     if(o1.getDate().equals(o2.getDate())) {
                         return o1.getStart()-o2.getStart(); //时间越小表示越早
                     }
                     else return o1.getDate().compareTo(o2.getDate());
                 }
                 else {
-                    return o1.getPlat().compareTo(o2.getPlat());
+                    return plat1.compareTo(plat2);
                 }
             }
         });
 
-        int countA=0, countB=0, countC=0, countD=0;
-        for (int i = 0; i < set.size(); i++) {
-            OrderInfo info = set.get(i);
-            if(info.getPlat().equals("A") && countA == 0) {
-                System.out.println("场地：A");
-            }
-            else if(info.getPlat().equals("B") && countB == 0) {
-                System.out.println("小计：" + countA + "元");
-                System.out.println("场地：B");
-            }
-            else if(info.getPlat().equals("C") && countC == 0) {
-                System.out.println("小计：" + countB + "元");
-                System.out.println("场地：C");
-            }
-            else if(info.getPlat().equals("D") && countD == 0){
-                System.out.println("小计：" + countC + "元");
-                System.out.println("场地：D");
-            }
-            String money = order.get(info);
-            int mm = Integer.parseInt(money.substring(0, money.length()-1));    //排除中文字符
-            if(info.getPlat().equals("A")) countA += mm;
-            else if(info.getPlat().equals("B")) countB += mm;
-            else if(info.getPlat().equals("C")) countC += mm;
-            else if(info.getPlat().equals("D")) countD += mm;
-            System.out.println(info.toString() + " " + money);
-        }
-        System.out.println("小计：" + countD + "元");
-        System.out.println("---");
-        System.out.println("总计：" + (countA+countB+countC+countD) + "元");
+        printRevenue(order);
     }
 
     /**
@@ -240,6 +254,11 @@ public class Booking {
         return true;
     }
 
+    /**
+     * 将格式化的时间转换成可以计算的整型值
+     * @param t
+     * @return
+     */
     public static int changeTime(String t) {
         int res = 0;
         if(t.charAt(0) == '0' && t.trim().length() > 1) {
@@ -268,6 +287,12 @@ public class Booking {
         }
     }
 
+    /**
+     * 计算在预定的时间段内的开销
+     * @param info
+     * @param week
+     * @return
+     */
     public int computeCost(OrderInfo info, DayOfWeek week) {
         int start = info.getStart();
         int end = info.getEnd();
@@ -326,169 +351,88 @@ public class Booking {
         }
         return count;
     }
-
-    static class OrderInfo{
-        String user;
-        String date;
-        int start;
-        int end;
-        String plat;
-        boolean isCancel;
-        public OrderInfo() {
-
-        }
-        /*public OrderInfo(String user, String date, String time, String plat, boolean isCancel) {
-            this.user = user;
-            this.date = date;
-            this.time = time;
-            this.plat = plat;
-            this.isCancel = isCancel;
-        }*/
-
-        public String getUser() {
-            return user;
-        }
-
-        public void setUser(String user) {
-            this.user = user;
-        }
-
-        public int getStart() {
-            return start;
-        }
-
-        public void setStart(int start) {
-            this.start = start;
-        }
-
-        public int getEnd() {
-            return end;
-        }
-
-        public void setEnd(int end) {
-            this.end = end;
-        }
-
-        public String getDate() {
-            return date;
-        }
-
-        public void setDate(String date) {
-            this.date = date;
-        }
-
-        public String getPlat() {
-            return plat;
-        }
-
-        public void setPlat(String plat) {
-            this.plat = plat;
-        }
-
-        public boolean isCancel() {
-            return isCancel;
-        }
-
-        public void setCancel(boolean cancel) {
-            isCancel = cancel;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if(this == obj) {
-                return true;
-            }
-            if(obj == null || obj.getClass() != this.getClass()) {
-                return false;
-            }
-            OrderInfo order = (OrderInfo) obj;
-            if(isCancel) {
-                if(user.equals(order.user) && date.equals(order.date) && start == order.start && end == order.end &&
-                        plat.equals(order.plat)) {
-                    return true;
+/*
+    *//**
+     * 判断是否是违约金
+     * @param money
+     * @return
+     *//*
+    public String isBreak(String money) {
+        String mint = "";
+        if(money.contains("违约金")) {
+            money = money.trim();
+            for (int j = 0; j < money.length(); j++) {
+                if(money.charAt(j) >= 48 && money.charAt(j) <= 57) {
+                    mint += money.charAt(j);
                 }
-                else return false;
             }
-            else {
-                if(date.equals(order.date) && plat.equals(order.plat)) {
-                    if(isDuplicate(this, order)) { //预定时间冲突
-                        return false;
-                    }
-                    else return true;
-                }
-                else return true;
-            }
+        } else {
+            mint = money.substring(0, money.length()-1);
         }
+        return mint;
+    }*/
 
-        @Override
-        public int hashCode() {
-            return date.hashCode()+plat.hashCode();
-        }
-
-        @Override
-        public String toString() {
-            String begin;
-            if(start < 10) {
-                begin = 0+""+start;
-            }
-            else begin = start+"";
-            String finish;
-            if(end < 10) {
-                finish = 0+""+end;
-            }
-            else finish = end+"";
-            String s = date +" " + begin + ":00~" + finish + ":00";
-            return s;
-        }
-    }
 
     /**
-     * 判断两个时间段是否有重复
-     * @param time1
-     * @param time2
-     * @return
+     * 打印管理员的收入情况
+     * @param set
      */
-    public static boolean isDuplicate(OrderInfo order1, OrderInfo order2) {
-        int m1 = order1.getStart(), m2 = order1.getEnd();
-        int n1 = order2.getStart(), n2 = order2.getEnd();
-        if(m2 >= n1 || m1 <= n2) {  //没有重复
-            return false;
-        }
-        return true;
-    }
-
-    /*static class test{
-        String user;
-        public test(String user) {
-            this.user = user;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if(this == obj) {
-                return true;
+    public void printRevenue(ArrayList<OrderInfo> set) {
+        System.out.println("收入汇总");
+        System.out.println("---");
+        int countA=0, countB=0, countC=0, countD=0;
+        int i = 0;
+        System.out.println("场地：A");
+        for (; i < set.size(); i++) {
+            OrderInfo info = set.get(i);
+            if(!info.getPlat().contains("A")) {
+                break;
             }
-            if(obj == null || obj.getClass() != this.getClass()) {
-                return false;
-            }
-            test t = (test)obj;
-            if(user.equals(t.user)) {
-                return true;
-            }
-            return false;
+            int mm = info.getMoney();    //排除中文字符
+            countA += mm;
+            System.out.println(info.toString());
         }
+        System.out.println("小计：" + countA + "元");
+        System.out.println();
 
-        @Override
-        public int hashCode() {
-            return user.hashCode();
+        System.out.println("场地：B");
+        for (; i < set.size(); i++) {
+            OrderInfo info = set.get(i);
+            if(!info.getPlat().contains("B")) {
+                break;
+            }
+            int mm = info.getMoney();    //排除中文字符
+            countB += mm;
+            System.out.println(info.toString());
         }
-    }*/
-    public static void main(String[] args) {
-        /*test t1 = new test("aa");
-        test t2 = new test("aa");
-        System.out.println(t1.equals(t2));*/
+        System.out.println("小计：" + countB + "元");
+        System.out.println();
 
-        Booking book = new Booking();
-        book.acceptOrder();
+        System.out.println("场地：C");
+        for (; i < set.size(); i++) {
+            OrderInfo info = set.get(i);
+            if(!info.getPlat().contains("C")) {
+                break;
+            }
+            int mm = info.getMoney();    //排除中文字符
+            countC += mm;
+            System.out.println(info.toString());
+        }
+        System.out.println("小计：" + countC + "元");
+        System.out.println();
+
+        System.out.println("场地：D");
+        for (; i < set.size(); i++) {
+            OrderInfo info = set.get(i);
+            if(!info.getPlat().contains("D")) {
+                break;
+            }
+            int mm = info.getMoney();    //排除中文字符
+            countD += mm;
+            System.out.println(info.toString());
+        }
+        System.out.println("小计：" + countD + "元");
+        System.out.println("---");
+        System.out.println("总计：" + (countA+countB+countC+countD) + "元");
     }
 }
