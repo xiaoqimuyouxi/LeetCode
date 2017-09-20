@@ -1,6 +1,7 @@
 package exam.baidu;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
@@ -15,8 +16,8 @@ public class ComputeDays {
         }
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < numOfPlants - 1; i++) {
-            if(plantHeight[i] > plantHeight[i+1]) {
-                list.add(i);
+            if(plantHeight[i] < plantHeight[i+1]) {
+                list.add(i+1);
             }
         }
         int sum = 0;
@@ -33,8 +34,8 @@ public class ComputeDays {
                 while (list.contains(right)) {
                     right++;
                 }
-                if(plantHeight[left] > plantHeight[right])
-                    list.add(left);
+                if(right < plantHeight.length && plantHeight[left] < plantHeight[right])
+                    list.add(right);
             }
             index += i;
             sum++;
